@@ -216,7 +216,7 @@
                 // alert(geography.properties.name);
 
                 // replace spaces with dashes
-                cname = geography.properties.name.replace(/\s+/g, '-');
+                cname = geography.properties.name.replace(/\s+/g, '-').toLowerCase();
 
                 window.location.href="/{{topic_id|url_safe}}/" + cname + "/{% if restrict %}?restrict=true{% endif %}";
 
