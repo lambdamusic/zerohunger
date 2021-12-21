@@ -106,4 +106,6 @@ ENV/
 # PRIVATE CONFIG FILES
 local_settings.py
 
+db.sqlite3
+
 README_PRIVATE.md
