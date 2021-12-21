@@ -20,10 +20,18 @@ The `docs` folder contains a static version of the site, which is accessible at:
 
 ## Dimensions API credentials
 
-TODO
+Copy the local settings file first:
 
-Remember to set `local_settings.DEMO_MODE_FLAG` to false in order to see all subjects. 
+```bash
+cp local_settings_example.py local_settings.py
+```
 
+Then update the [Dimensions API](https://docs.dimensions.ai/dsl) credentials as needed: 
+
+```python
+DIMENSIONS_USR = ""
+DIMENSIONS_PSW = ""
+```
 
 ## Status
 
