@@ -1,0 +1,1454 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2000254-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2000254-3');
+</script>
+
+    <script>
+
+        dataLayer = [{
+            "page": {
+            "category": {
+                "pageType": "search-page"
+            },
+            "attributes": {
+                "template": "mosaic"
+            }
+            }
+        }];
+    </script>
+    
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../media/static/favicon.ico">
+
+	
+		<title>SN Grand Challenges Hack Day 2018-11-02</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../media/static/libs/bootswatch3.2/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../media/static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../media/static/libs/bootstrap-3.3.7-dist/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+    .tooltip-inner {
+        max-width: 200px;
+        /* If max-width does not work, try using width instead */
+        width: 200px; 
+    }
+    .lead-plus {font-size: 26.5px;}
+    .label-dark {background: #2c3e50; color: white; padding: 1px;}
+    .margin50 {margin-top: 50px; margin-bottom: 50px;}
+    .marginb100 {margin-bottom: 100px;}
+
+    .breadcrumbs {margin-top: 80px;}
+    .namespaces {background: #ced2d6; width: 100%;}
+    .footer {background-color: #3e3f3a;}
+
+    .margin50Top {margin-top: 50px;}
+    .margin20Top {margin-top: 20px;}
+    .margin50Bottom { margin-bottom: 50px;}
+    .margin20Bottom { margin-bottom: 20px;}
+
+    /*so that the d3plus tooltip panel doesnt cover the top banner*/
+    .navbar {z-index: 3000;}
+
+
+    .navbar-alpha {
+        font-size: 65%;
+        font-style: italic;
+        font-weight: bold;
+        color: darkgoldenrod;
+    }
+
+
+    .btn-xxs {
+    padding: 1px 4px;
+    font-size: 10px;
+    line-height: 1.2;
+    border-radius: 2px;
+    }
+
+
+    .code-example {
+        overflow: auto;
+        height: 400px;
+    }
+
+
+    #side_title a {
+        color: blue;
+        text-decoration: underline;
+
+    }
+    .text-dark {
+        color: #5d5c5c;
+        
+    }
+
+    .rel_box_list {
+        list-style-type: circle; 
+        margin-top: 0px;
+    }
+
+    li.nobullet {
+        list-style: none;
+    }
+
+    ol {
+        padding-left: 12px;
+    }
+
+
+
+</style>
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+
+    
+
+    
+
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html">SN Grand Challenges Hack Day <sup style="color: red;">2018-11-02</sup></a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html">Zero Food Hunger</a></li>
+
+      </ul>
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+    
+
+
+
+
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container">
+
+
+	
+
+  <div class="page-header">
+    
+    Use one of the categories below to start a search
+    &nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>
+  </div>
+  <div id="q" style="display: none;">
+    <pre><code><p><br>    search publications in full_data for &quot;(Food Insecurity AND SDG) OR (Food Insecurity AND MDG)&quot;<br>    where (year in [2000:2018]) <br>    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[all]<br>    return in &quot;facets&quot; researchers[all]   <br>    </p></code></pre>
+  </div>
+
+
+  <div class="container">
+
+
+      
+      <div class="row">
+
+        <div class="col-md-6" style="margin-top: 20px;">
+
+          
+              <a href="../undernourishment/index.html" class="btn btn-primary btn-lg btn-block btn-huge">Undernourishment</a>
+          
+              <a href="index.html" class="btn btn-info btn-lg btn-block btn-huge">Food insecurity</a>
+          
+              <a href="../stunting/index.html" class="btn btn-success btn-lg btn-block btn-huge">Stunting</a>
+          
+              <a href="../malnutrition/index.html" class="btn btn-danger btn-lg btn-block btn-huge">Malnutrition</a>
+          
+              <a href="../agricultural-productivity/index.html" class="btn btn-warning btn-lg btn-block btn-huge">Agricultural productivity</a>
+          
+                      
+         </div>
+
+        <div class="col-md-6" style="margin-top: 20px;">
+          
+              <a href="../sustainable-agriculture/index.html" class="btn btn-info btn-lg btn-block btn-huge">Sustainable agriculture</a>
+          
+              <a href="../genetic-diversity/index.html" class="btn btn-primary btn-lg btn-block btn-huge">Genetic diversity</a>
+          
+              <a href="../expenditure-flows/index.html" class="btn btn-warning btn-lg btn-block btn-huge">Expenditure flows</a>
+          
+              <a href="../trade-restrictions/index.html" class="btn btn-success btn-lg btn-block btn-huge">Trade restrictions</a>
+          
+              <a href="../food-commodity-markets/index.html" class="btn btn-danger btn-lg btn-block btn-huge">Food commodity markets</a>
+          
+         </div>
+
+      </div>
+
+
+    
+    
+      
+
+      
+      <div class="row" style="margin-top: 60px;">
+
+        <div class="col-md-12" style="margin-top: 20px;">
+          <h3>Showing content for: <span style="color: darkred;">Food Insecurity</span>
+              (21984 results)
+          </h3>        
+              <span class="checkbox" >
+              <label><input type="checkbox" onclick='handleClick(this);' value=""  >Restrict to Springer Nature</label>
+             </span>
+               
+            <hr>
+         </div>
+
+
+          <div class="col-md-12"  id="map_container" style="position: relative; width: 100%; height: 500px;">
+            
+          </div>
+
+          
+
+          <div style="display: none;">
+
+            
+      
+            
+      
+            
+              
+      
+                <a href="afghanistan/index.html">afghanistan</a>
+                
+              
+      
+                <a href="angola/index.html">angola</a>
+                
+              
+      
+                <a href="albania/index.html">albania</a>
+                
+              
+      
+                <a href="united-arab-emirates/index.html">united-arab-emirates</a>
+                
+              
+      
+                <a href="argentina/index.html">argentina</a>
+                
+              
+      
+                <a href="armenia/index.html">armenia</a>
+                
+              
+      
+                <a href="antarctica/index.html">antarctica</a>
+                
+              
+      
+                <a href="french-southern-and-antarctic-lands/index.html">french-southern-and-antarctic-lands</a>
+                
+              
+      
+                <a href="australia/index.html">australia</a>
+                
+              
+      
+                <a href="austria/index.html">austria</a>
+                
+              
+      
+                <a href="azerbaijan/index.html">azerbaijan</a>
+                
+              
+      
+                <a href="burundi/index.html">burundi</a>
+                
+              
+      
+                <a href="belgium/index.html">belgium</a>
+                
+              
+      
+                <a href="benin/index.html">benin</a>
+                
+              
+      
+                <a href="burkina-faso/index.html">burkina-faso</a>
+                
+              
+      
+                <a href="bangladesh/index.html">bangladesh</a>
+                
+              
+      
+                <a href="bulgaria/index.html">bulgaria</a>
+                
+              
+      
+                <a href="the-bahamas/index.html">the-bahamas</a>
+                
+              
+      
+                <a href="bosnia-and-herzegovina/index.html">bosnia-and-herzegovina</a>
+                
+              
+      
+                <a href="belarus/index.html">belarus</a>
+                
+              
+      
+                <a href="belize/index.html">belize</a>
+                
+              
+      
+                <a href="bolivia/index.html">bolivia</a>
+                
+              
+      
+                <a href="brazil/index.html">brazil</a>
+                
+              
+      
+                <a href="brunei/index.html">brunei</a>
+                
+              
+      
+                <a href="bhutan/index.html">bhutan</a>
+                
+              
+      
+                <a href="botswana/index.html">botswana</a>
+                
+              
+      
+                <a href="central-african-republic/index.html">central-african-republic</a>
+                
+              
+      
+                <a href="canada/index.html">canada</a>
+                
+              
+      
+                <a href="switzerland/index.html">switzerland</a>
+                
+              
+      
+                <a href="chile/index.html">chile</a>
+                
+              
+      
+                <a href="china/index.html">china</a>
+                
+              
+      
+                <a href="ivory-coast/index.html">ivory-coast</a>
+                
+              
+      
+                <a href="cameroon/index.html">cameroon</a>
+                
+              
+      
+                <a href="democratic-republic-of-the-congo/index.html">democratic-republic-of-the-congo</a>
+                
+              
+      
+                <a href="republic-of-the-congo/index.html">republic-of-the-congo</a>
+                
+              
+      
+                <a href="colombia/index.html">colombia</a>
+                
+              
+      
+                <a href="costa-rica/index.html">costa-rica</a>
+                
+              
+      
+                <a href="cuba/index.html">cuba</a>
+                
+              
+      
+                <a href="northern-cyprus/index.html">northern-cyprus</a>
+                
+              
+      
+                <a href="cyprus/index.html">cyprus</a>
+                
+              
+      
+                <a href="czech-republic/index.html">czech-republic</a>
+                
+              
+      
+                <a href="germany/index.html">germany</a>
+                
+              
+      
+                <a href="djibouti/index.html">djibouti</a>
+                
+              
+      
+                <a href="denmark/index.html">denmark</a>
+                
+              
+      
+                <a href="dominican-republic/index.html">dominican-republic</a>
+                
+              
+      
+                <a href="algeria/index.html">algeria</a>
+                
+              
+      
+                <a href="ecuador/index.html">ecuador</a>
+                
+              
+      
+                <a href="egypt/index.html">egypt</a>
+                
+              
+      
+                <a href="eritrea/index.html">eritrea</a>
+                
+              
+      
+                <a href="spain/index.html">spain</a>
+                
+              
+      
+                <a href="estonia/index.html">estonia</a>
+                
+              
+      
+                <a href="ethiopia/index.html">ethiopia</a>
+                
+              
+      
+                <a href="finland/index.html">finland</a>
+                
+              
+      
+                <a href="fiji/index.html">fiji</a>
+                
+              
+      
+                <a href="falkland-islands/index.html">falkland-islands</a>
+                
+              
+      
+                <a href="france/index.html">france</a>
+                
+              
+      
+                <a href="french-guiana/index.html">french-guiana</a>
+                
+              
+      
+                <a href="gabon/index.html">gabon</a>
+                
+              
+      
+                <a href="united-kingdom/index.html">united-kingdom</a>
+                
+              
+      
+                <a href="georgia/index.html">georgia</a>
+                
+              
+      
+                <a href="ghana/index.html">ghana</a>
+                
+              
+      
+                <a href="guinea/index.html">guinea</a>
+                
+              
+      
+                <a href="gambia/index.html">gambia</a>
+                
+              
+      
+                <a href="guinea-bissau/index.html">guinea-bissau</a>
+                
+              
+      
+                <a href="equatorial-guinea/index.html">equatorial-guinea</a>
+                
+              
+      
+                <a href="greece/index.html">greece</a>
+                
+              
+      
+                <a href="greenland/index.html">greenland</a>
+                
+              
+      
+                <a href="guatemala/index.html">guatemala</a>
+                
+              
+      
+                <a href="guyana/index.html">guyana</a>
+                
+              
+      
+                <a href="honduras/index.html">honduras</a>
+                
+              
+      
+                <a href="croatia/index.html">croatia</a>
+                
+              
+      
+                <a href="haiti/index.html">haiti</a>
+                
+              
+      
+                <a href="hungary/index.html">hungary</a>
+                
+              
+      
+                <a href="indonesia/index.html">indonesia</a>
+                
+              
+      
+                <a href="india/index.html">india</a>
+                
+              
+      
+                <a href="ireland/index.html">ireland</a>
+                
+              
+      
+                <a href="iran/index.html">iran</a>
+                
+              
+      
+                <a href="iraq/index.html">iraq</a>
+                
+              
+      
+                <a href="iceland/index.html">iceland</a>
+                
+              
+      
+                <a href="israel/index.html">israel</a>
+                
+              
+      
+                <a href="italy/index.html">italy</a>
+                
+              
+      
+                <a href="jamaica/index.html">jamaica</a>
+                
+              
+      
+                <a href="jordan/index.html">jordan</a>
+                
+              
+      
+                <a href="japan/index.html">japan</a>
+                
+              
+      
+                <a href="kazakhstan/index.html">kazakhstan</a>
+                
+              
+      
+                <a href="kenya/index.html">kenya</a>
+                
+              
+      
+                <a href="kyrgyzstan/index.html">kyrgyzstan</a>
+                
+              
+      
+                <a href="cambodia/index.html">cambodia</a>
+                
+              
+      
+                <a href="south-korea/index.html">south-korea</a>
+                
+              
+      
+                <a href="kosovo/index.html">kosovo</a>
+                
+              
+      
+                <a href="kuwait/index.html">kuwait</a>
+                
+              
+      
+                <a href="laos/index.html">laos</a>
+                
+              
+      
+                <a href="lebanon/index.html">lebanon</a>
+                
+              
+      
+                <a href="liberia/index.html">liberia</a>
+                
+              
+      
+                <a href="libya/index.html">libya</a>
+                
+              
+      
+                <a href="sri-lanka/index.html">sri-lanka</a>
+                
+              
+      
+                <a href="lesotho/index.html">lesotho</a>
+                
+              
+      
+                <a href="lithuania/index.html">lithuania</a>
+                
+              
+      
+                <a href="luxembourg/index.html">luxembourg</a>
+                
+              
+      
+                <a href="latvia/index.html">latvia</a>
+                
+              
+      
+                <a href="morocco/index.html">morocco</a>
+                
+              
+      
+                <a href="moldova/index.html">moldova</a>
+                
+              
+      
+                <a href="madagascar/index.html">madagascar</a>
+                
+              
+      
+                <a href="mexico/index.html">mexico</a>
+                
+              
+      
+                <a href="macedonia/index.html">macedonia</a>
+                
+              
+      
+                <a href="mali/index.html">mali</a>
+                
+              
+      
+                <a href="myanmar/index.html">myanmar</a>
+                
+              
+      
+                <a href="montenegro/index.html">montenegro</a>
+                
+              
+      
+                <a href="mongolia/index.html">mongolia</a>
+                
+              
+      
+                <a href="mozambique/index.html">mozambique</a>
+                
+              
+      
+                <a href="mauritania/index.html">mauritania</a>
+                
+              
+      
+                <a href="malawi/index.html">malawi</a>
+                
+              
+      
+                <a href="malaysia/index.html">malaysia</a>
+                
+              
+      
+                <a href="namibia/index.html">namibia</a>
+                
+              
+      
+                <a href="new-caledonia/index.html">new-caledonia</a>
+                
+              
+      
+                <a href="niger/index.html">niger</a>
+                
+              
+      
+                <a href="nigeria/index.html">nigeria</a>
+                
+              
+      
+                <a href="nicaragua/index.html">nicaragua</a>
+                
+              
+      
+                <a href="netherlands/index.html">netherlands</a>
+                
+              
+      
+                <a href="norway/index.html">norway</a>
+                
+              
+      
+                <a href="nepal/index.html">nepal</a>
+                
+              
+      
+                <a href="new-zealand/index.html">new-zealand</a>
+                
+              
+      
+                <a href="oman/index.html">oman</a>
+                
+              
+      
+                <a href="pakistan/index.html">pakistan</a>
+                
+              
+      
+                <a href="panama/index.html">panama</a>
+                
+              
+      
+                <a href="peru/index.html">peru</a>
+                
+              
+      
+                <a href="philippines/index.html">philippines</a>
+                
+              
+      
+                <a href="papua-new-guinea/index.html">papua-new-guinea</a>
+                
+              
+      
+                <a href="poland/index.html">poland</a>
+                
+              
+      
+                <a href="puerto-rico/index.html">puerto-rico</a>
+                
+              
+      
+                <a href="north-korea/index.html">north-korea</a>
+                
+              
+      
+                <a href="portugal/index.html">portugal</a>
+                
+              
+      
+                <a href="paraguay/index.html">paraguay</a>
+                
+              
+      
+                <a href="qatar/index.html">qatar</a>
+                
+              
+      
+                <a href="romania/index.html">romania</a>
+                
+              
+      
+                <a href="russia/index.html">russia</a>
+                
+              
+      
+                <a href="rwanda/index.html">rwanda</a>
+                
+              
+      
+                <a href="western-sahara/index.html">western-sahara</a>
+                
+              
+      
+                <a href="saudi-arabia/index.html">saudi-arabia</a>
+                
+              
+      
+                <a href="sudan/index.html">sudan</a>
+                
+              
+      
+                <a href="south-sudan/index.html">south-sudan</a>
+                
+              
+      
+                <a href="senegal/index.html">senegal</a>
+                
+              
+      
+                <a href="solomon-islands/index.html">solomon-islands</a>
+                
+              
+      
+                <a href="sierra-leone/index.html">sierra-leone</a>
+                
+              
+      
+                <a href="el-salvador/index.html">el-salvador</a>
+                
+              
+      
+                <a href="somaliland/index.html">somaliland</a>
+                
+              
+      
+                <a href="somalia/index.html">somalia</a>
+                
+              
+      
+                <a href="republic-of-serbia/index.html">republic-of-serbia</a>
+                
+              
+      
+                <a href="suriname/index.html">suriname</a>
+                
+              
+      
+                <a href="slovakia/index.html">slovakia</a>
+                
+              
+      
+                <a href="slovenia/index.html">slovenia</a>
+                
+              
+      
+                <a href="sweden/index.html">sweden</a>
+                
+              
+      
+                <a href="swaziland/index.html">swaziland</a>
+                
+              
+      
+                <a href="syria/index.html">syria</a>
+                
+              
+      
+                <a href="chad/index.html">chad</a>
+                
+              
+      
+                <a href="togo/index.html">togo</a>
+                
+              
+      
+                <a href="thailand/index.html">thailand</a>
+                
+              
+      
+                <a href="tajikistan/index.html">tajikistan</a>
+                
+              
+      
+                <a href="turkmenistan/index.html">turkmenistan</a>
+                
+              
+      
+                <a href="east-timor/index.html">east-timor</a>
+                
+              
+      
+                <a href="trinidad-and-tobago/index.html">trinidad-and-tobago</a>
+                
+              
+      
+                <a href="tunisia/index.html">tunisia</a>
+                
+              
+      
+                <a href="turkey/index.html">turkey</a>
+                
+              
+      
+                <a href="taiwan/index.html">taiwan</a>
+                
+              
+      
+                <a href="united-republic-of-tanzania/index.html">united-republic-of-tanzania</a>
+                
+              
+      
+                <a href="uganda/index.html">uganda</a>
+                
+              
+      
+                <a href="ukraine/index.html">ukraine</a>
+                
+              
+      
+                <a href="uruguay/index.html">uruguay</a>
+                
+              
+      
+                <a href="united-states-of-america/index.html">united-states-of-america</a>
+                
+              
+      
+                <a href="uzbekistan/index.html">uzbekistan</a>
+                
+              
+      
+                <a href="venezuela/index.html">venezuela</a>
+                
+              
+      
+                <a href="vietnam/index.html">vietnam</a>
+                
+              
+      
+                <a href="vanuatu/index.html">vanuatu</a>
+                
+              
+      
+                <a href="west-bank/index.html">west-bank</a>
+                
+              
+      
+                <a href="yemen/index.html">yemen</a>
+                
+              
+      
+                <a href="south-africa/index.html">south-africa</a>
+                
+              
+      
+                <a href="zambia/index.html">zambia</a>
+                
+              
+      
+                <a href="zimbabwe/index.html">zimbabwe</a>
+                
+              
+              
+              
+            
+      
+          </div>
+
+
+        <div class="col-md-4" style="margin-top: 20px;">
+
+
+
+            <div class="well">
+              <b>Top Researchers</b>
+              <br>
+              <ol>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.016000713347.04" target="_blank">Gorazd&nbsp;Meško</a> <a class="badge text-info" title="Tot Publications">54</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011557273236.42" target="_blank">Branko&nbsp;Lobnikar</a> <a class="badge text-info" title="Tot Publications">53</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012420604451.87" target="_blank">Kaja&nbsp;Prislan</a> <a class="badge text-info" title="Tot Publications">53</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.07554462773.86" target="_blank">Rok&nbsp;Hacin</a> <a class="badge text-info" title="Tot Publications">53</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013417056762.57" target="_blank">Zulfiqar Ahmed&nbsp;Bhutta</a> <a class="badge text-info" title="Tot Publications">38</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01074652471.29" target="_blank">Geoffrey T&nbsp;Fong</a> <a class="badge text-info" title="Tot Publications">25</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010273406545.71" target="_blank">Vivero-Pol Jose&nbsp;Luis</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011301067511.75" target="_blank">Ferrando&nbsp;Tomaso</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012674030511.30" target="_blank">Mattei&nbsp;Ugo</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013673064603.85" target="_blank">Alex Charles&nbsp;Michalos</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015004053411.57" target="_blank">Commonwealth&nbsp;Secretariat</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01264143366.50" target="_blank">Jessica C&nbsp;Fanzo</a> <a class="badge text-info" title="Tot Publications">20</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012223465246.08" target="_blank">Ahmed Shafiqul&nbsp;Huque</a> <a class="badge text-info" title="Tot Publications">17</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013126150753.43" target="_blank">Rajib&nbsp;Shaw</a> <a class="badge text-info" title="Tot Publications">16</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01341771150.88" target="_blank">Dhirendra Narain&nbsp;Sinha</a> <a class="badge text-info" title="Tot Publications">16</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015317071303.61" target="_blank">Habib Mohammad&nbsp;Zafarullah</a> <a class="badge text-info" title="Tot Publications">16</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011373207207.62" target="_blank">Richard J&nbsp;Estes</a> <a class="badge text-info" title="Tot Publications">14</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01166457565.80" target="_blank">Anne Chiew Kin&nbsp;Quah</a> <a class="badge text-info" title="Tot Publications">14</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012036064641.19" target="_blank">Daniel T L Shek&nbsp;Shek</a> <a class="badge text-info" title="Tot Publications">14</a></li>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01257541737.74" target="_blank">Ravi N&nbsp;Mehrotra</a> <a class="badge text-info" title="Tot Publications">14</a></li>
+              
+              </ol>
+            </div>
+
+
+            <div class="well">
+              <b>Top Institutions</b>
+              <br>
+              <ol>
+              
+                <li><a href="https://grid.ac/institutes/grid.8991.9" target="_blank">London School of Hygiene &amp; Tropical Medicine</a> <a class="badge text-info" title="Tot Publications">97</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.4991.5" target="_blank">University of Oxford</a> <a class="badge text-info" title="Tot Publications">85</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.21729.3f" target="_blank">Columbia University</a> <a class="badge text-info" title="Tot Publications">77</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.21107.35" target="_blank">Johns Hopkins University</a> <a class="badge text-info" title="Tot Publications">75</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.38142.3c" target="_blank">Harvard University</a> <a class="badge text-info" title="Tot Publications">75</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.83440.3b" target="_blank">University College London</a> <a class="badge text-info" title="Tot Publications">75</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.17091.3e" target="_blank">University of British Columbia</a> <a class="badge text-info" title="Tot Publications">68</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.419346.d" target="_blank">International Food Policy Research Institute</a> <a class="badge text-info" title="Tot Publications">65</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.7836.a" target="_blank">University of Cape Town</a> <a class="badge text-info" title="Tot Publications">64</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.11951.3d" target="_blank">University of the Witwatersrand</a> <a class="badge text-info" title="Tot Publications">57</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.420153.1" target="_blank">Food and Agriculture Organization of the United Nations</a> <a class="badge text-info" title="Tot Publications">55</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.4818.5" target="_blank">Wageningen University &amp; Research</a> <a class="badge text-info" title="Tot Publications">52</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.28046.38" target="_blank">University of Ottawa</a> <a class="badge text-info" title="Tot Publications">51</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.3575.4" target="_blank">World Health Organization</a> <a class="badge text-info" title="Tot Publications">49</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.1001.0" target="_blank">Australian National University</a> <a class="badge text-info" title="Tot Publications">48</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.431778.e" target="_blank">World Bank</a> <a class="badge text-info" title="Tot Publications">48</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.16463.36" target="_blank">University of KwaZulu-Natal</a> <a class="badge text-info" title="Tot Publications">47</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.11194.3c" target="_blank">Makerere University</a> <a class="badge text-info" title="Tot Publications">44</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.6906.9" target="_blank">Erasmus University Rotterdam</a> <a class="badge text-info" title="Tot Publications">44</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.5491.9" target="_blank">University of Southampton</a> <a class="badge text-info" title="Tot Publications">43</a></li>
+              
+              </ol>
+            </div>
+
+
+             <div class="well">
+              <b>Top Funders</b>
+              <br>
+              
+              <ol>
+              
+                <li><a href="https://grid.ac/institutes/grid.434257.3" target="_blank">Economic and Social Research Council</a> <a class="badge text-info" title="Tot Publications">123</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.270680.b" target="_blank">European Commission</a> <a class="badge text-info" title="Tot Publications">100</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.52788.30" target="_blank">Wellcome Trust</a> <a class="badge text-info" title="Tot Publications">59</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.418309.7" target="_blank">Bill &amp; Melinda Gates Foundation</a> <a class="badge text-info" title="Tot Publications">54</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.14105.31" target="_blank">Medical Research Council</a> <a class="badge text-info" title="Tot Publications">49</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.8682.4" target="_blank">Natural Environment Research Council</a> <a class="badge text-info" title="Tot Publications">43</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.420285.9" target="_blank">United States Agency for International Development</a> <a class="badge text-info" title="Tot Publications">42</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.3575.4" target="_blank">World Health Organization</a> <a class="badge text-info" title="Tot Publications">39</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.420089.7" target="_blank">Eunice Kennedy Shriver National Institute of Child Health and Human Development</a> <a class="badge text-info" title="Tot Publications">33</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.425888.b" target="_blank">Swiss National Science Foundation</a> <a class="badge text-info" title="Tot Publications">32</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.451056.3" target="_blank">National Institute for Health Research</a> <a class="badge text-info" title="Tot Publications">28</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.54432.34" target="_blank">Japan Society for the Promotion of Science</a> <a class="badge text-info" title="Tot Publications">27</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.183804.6" target="_blank">Social Sciences and Humanities Research Council</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.248883.d" target="_blank">Canadian Institutes of Health Research</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.5586.e" target="_blank">Federal Ministry of Education and Research</a> <a class="badge text-info" title="Tot Publications">23</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.416868.5" target="_blank">National Institute of Mental Health</a> <a class="badge text-info" title="Tot Publications">22</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.420318.c" target="_blank">United Nations Children&#x27;s Fund</a> <a class="badge text-info" title="Tot Publications">22</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.452939.0" target="_blank">United Nations</a> <a class="badge text-info" title="Tot Publications">22</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.419681.3" target="_blank">National Institute of Allergy and Infectious Diseases</a> <a class="badge text-info" title="Tot Publications">17</a></li>
+              
+                <li><a href="https://grid.ac/institutes/grid.452896.4" target="_blank">European Research Council</a> <a class="badge text-info" title="Tot Publications">17</a></li>
+              
+                </ol>
+            </div>
+
+
+
+
+
+
+          </div>
+
+        <div class="col-md-8" style="margin-top: 10px;">
+
+
+              <h5>Top Papers</h5>
+              <hr>
+
+              
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Maternal and child undernutrition: global and regional exposures and health consequences</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(07)61690-0" target="_blank">10.1016/s0140-6736(07)61690-0</a>&nbsp;<span class="badge" style="background: goldenrod;">3648 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national incidence, prevalence, and years lived with disability for 328 diseases and injuries for 195 countries, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(17)32154-2" target="_blank">10.1016/s0140-6736(17)32154-2</a>&nbsp;<span class="badge" style="background: goldenrod;">3494 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">The story of phosphorus: Global food security and food for thought</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Global Environmental Change</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.gloenvcha.2008.10.009" target="_blank">10.1016/j.gloenvcha.2008.10.009</a>&nbsp;<span class="badge" style="background: goldenrod;">2844 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national age-sex specific mortality for 264 causes of death, 1980–2016: a systematic analysis for the Global Burden of Disease Study 2016</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(17)32152-9" target="_blank">10.1016/s0140-6736(17)32152-9</a>&nbsp;<span class="badge" style="background: goldenrod;">2604 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Human nutrition, the gut microbiome and the immune system</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Nature</span>&nbsp;<a href="http://dx.doi.org/10.1038/nature10213" target="_blank">10.1038/nature10213</a>&nbsp;<span class="badge" style="background: goldenrod;">1693 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Evidence-based interventions for improvement of maternal and child nutrition: what can be done and at what cost?</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(13)60996-4" target="_blank">10.1016/s0140-6736(13)60996-4</a>&nbsp;<span class="badge" style="background: goldenrod;">1543 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Managing the health effects of climate change Lancet and University College London Institute for Global Health Commission</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(09)60935-1" target="_blank">10.1016/s0140-6736(09)60935-1</a>&nbsp;<span class="badge" style="background: goldenrod;">1442 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Prosperity without Growth</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9781849774338" target="_blank">10.4324/9781849774338</a>&nbsp;<span class="badge" style="background: goldenrod;">1306 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Our future: a Lancet commission on adolescent health and wellbeing</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(16)00579-1" target="_blank">10.1016/s0140-6736(16)00579-1</a>&nbsp;<span class="badge" style="background: goldenrod;">1272 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Priority actions for the non-communicable disease crisis</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(11)60393-0" target="_blank">10.1016/s0140-6736(11)60393-0</a>&nbsp;<span class="badge" style="background: goldenrod;">1105 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Safeguarding human health in the Anthropocene epoch: report of The Rockefeller Foundation–Lancet Commission on planetary health</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(15)60901-1" target="_blank">10.1016/s0140-6736(15)60901-1</a>&nbsp;<span class="badge" style="background: goldenrod;">1001 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">United Nations Conference on Trade and Development (UNCTAD)</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9780203029770" target="_blank">10.4324/9780203029770</a>&nbsp;<span class="badge" style="background: goldenrod;">942 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Health and climate change: policy responses to protect public health</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(15)60854-6" target="_blank">10.1016/s0140-6736(15)60854-6</a>&nbsp;<span class="badge" style="background: goldenrod;">941 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    CHAPTER&nbsp;<span class="lead" style="color: darkgoldenrod;">Multivariate Data Analysis</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-1-4020-5614-7_2260" target="_blank">10.1007/978-1-4020-5614-7_2260</a>&nbsp;<span class="badge" style="background: goldenrod;">921 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Nutrition-sensitive interventions and programmes: how can they help to accelerate progress in improving maternal and child nutrition?</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(13)60843-0" target="_blank">10.1016/s0140-6736(13)60843-0</a>&nbsp;<span class="badge" style="background: goldenrod;">900 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global health 2035: a world converging within a generation</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(13)62105-4" target="_blank">10.1016/s0140-6736(13)62105-4</a>&nbsp;<span class="badge" style="background: goldenrod;">761 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2012</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2012-en" target="_blank">10.1787/weo-2012-en</a>&nbsp;<span class="badge" style="background: goldenrod;">745 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">The Lancet Commission on global mental health and sustainable development</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(18)31612-x" target="_blank">10.1016/s0140-6736(18)31612-x</a>&nbsp;<span class="badge" style="background: goldenrod;">712 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Poverty and common mental disorders in low and middle income countries: A systematic review</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Social Science &amp; Medicine</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.socscimed.2010.04.027" target="_blank">10.1016/j.socscimed.2010.04.027</a>&nbsp;<span class="badge" style="background: goldenrod;">641 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Structural approaches to HIV prevention</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(08)60887-9" target="_blank">10.1016/s0140-6736(08)60887-9</a>&nbsp;<span class="badge" style="background: goldenrod;">605 citations</span>
+                  
+                  </li>
+
+              
+                
+        </div>
+
+      </div>
+
+
+    
+      
+
+
+
+
+
+
+  </div> <!-- /container -->
+
+
+    <div class="container margin50">
+    </div> <!-- /container -->
+
+
+<script>
+
+function handleClick(cb) {
+  // alert("Clicked, new value = " + cb.checked);
+  if (cb.checked == true) {
+    window.location.href="?s=Food Insecurity&restrict=true"
+  } else {
+    window.location.href="?s=Food Insecurity"
+  }
+}
+
+
+  
+</script>
+
+
+
+
+	</div>
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">SN Hack Day Zero Hunger 2018-11-02
+      &nbsp;|&nbsp;<a target="_blank" href="https://grandchallenges.springernature.com/">SN Grand Challenges Programme</a>
+      </p>
+    
+    </div>
+  </footer>
+
+
+
+    <script src="../media/static/libs/datamaps/datamaps.world.min.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../media/static/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../media/static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../media/static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+    <script>
+
+        // http://datamaps.github.io/ 
+        var map = new Datamap({element: document.getElementById('map_container'),
+            done: function(datamap) {
+            datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+                // alert(geography.properties.name);
+
+                // replace spaces with dashes
+                cname = geography.properties.name.replace(/\s+/g, '-');
+
+                // window.location.href="?s=Food Insecurity&country=" + geography.properties.name;
+
+                window.location.href="/food-insecurity/" + cname + "/";
+
+            });
+        }});
+
+
+
+    
+
+    </script>
+
+
+    
+
+
+
+    
+
+  </body>
+</html>

@@ -1,0 +1,1237 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2000254-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2000254-3');
+</script>
+
+    <script>
+
+        dataLayer = [{
+            "page": {
+            "category": {
+                "pageType": "search-page"
+            },
+            "attributes": {
+                "template": "mosaic"
+            }
+            }
+        }];
+    </script>
+    
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="media/static/favicon.ico">
+
+	
+		<title>SN Grand Challenges Hack Day 2018-11-02</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="media/static/libs/bootswatch3.2/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="media/static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/static/libs/bootstrap-3.3.7-dist/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+    .tooltip-inner {
+        max-width: 200px;
+        /* If max-width does not work, try using width instead */
+        width: 200px; 
+    }
+    .lead-plus {font-size: 26.5px;}
+    .label-dark {background: #2c3e50; color: white; padding: 1px;}
+    .margin50 {margin-top: 50px; margin-bottom: 50px;}
+    .marginb100 {margin-bottom: 100px;}
+
+    .breadcrumbs {margin-top: 80px;}
+    .namespaces {background: #ced2d6; width: 100%;}
+    .footer {background-color: #3e3f3a;}
+
+    .margin50Top {margin-top: 50px;}
+    .margin20Top {margin-top: 20px;}
+    .margin50Bottom { margin-bottom: 50px;}
+    .margin20Bottom { margin-bottom: 20px;}
+
+    /*so that the d3plus tooltip panel doesnt cover the top banner*/
+    .navbar {z-index: 3000;}
+
+
+    .navbar-alpha {
+        font-size: 65%;
+        font-style: italic;
+        font-weight: bold;
+        color: darkgoldenrod;
+    }
+
+
+    .btn-xxs {
+    padding: 1px 4px;
+    font-size: 10px;
+    line-height: 1.2;
+    border-radius: 2px;
+    }
+
+
+    .code-example {
+        overflow: auto;
+        height: 400px;
+    }
+
+
+    #side_title a {
+        color: blue;
+        text-decoration: underline;
+
+    }
+    .text-dark {
+        color: #5d5c5c;
+        
+    }
+
+    .rel_box_list {
+        list-style-type: circle; 
+        margin-top: 0px;
+    }
+
+    li.nobullet {
+        list-style: none;
+    }
+
+    ol {
+        padding-left: 12px;
+    }
+
+
+
+</style>
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+
+    
+
+    
+
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">SN Grand Challenges Hack Day <sup style="color: red;">2018-11-02</sup></a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Zero Food Hunger</a></li>
+
+      </ul>
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+    
+
+
+
+
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container">
+
+
+	
+
+  <div class="page-header">
+    
+    Use one of the categories below to start a search
+    &nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>
+  </div>
+  <div id="q" style="display: none;">
+    <pre><code><p><br>    search publications in full_data for &quot;(Robots.Txt AND SDG) OR (Robots.Txt AND MDG)&quot;<br>    where (year in [2000:2018]) <br>    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[all]<br>    return in &quot;facets&quot; researchers[all]   <br>    </p></code></pre>
+  </div>
+
+
+  <div class="container">
+
+
+      
+      <div class="row">
+
+        <div class="col-md-6" style="margin-top: 20px;">
+
+          
+              <a href="undernourishment/index.html" class="btn btn-primary btn-lg btn-block btn-huge">Undernourishment</a>
+          
+              <a href="food-insecurity/index.html" class="btn btn-info btn-lg btn-block btn-huge">Food insecurity</a>
+          
+              <a href="stunting/index.html" class="btn btn-success btn-lg btn-block btn-huge">Stunting</a>
+          
+              <a href="malnutrition/index.html" class="btn btn-danger btn-lg btn-block btn-huge">Malnutrition</a>
+          
+              <a href="agricultural-productivity/index.html" class="btn btn-warning btn-lg btn-block btn-huge">Agricultural productivity</a>
+          
+                      
+         </div>
+
+        <div class="col-md-6" style="margin-top: 20px;">
+          
+              <a href="sustainable-agriculture/index.html" class="btn btn-info btn-lg btn-block btn-huge">Sustainable agriculture</a>
+          
+              <a href="genetic-diversity/index.html" class="btn btn-primary btn-lg btn-block btn-huge">Genetic diversity</a>
+          
+              <a href="expenditure-flows/index.html" class="btn btn-warning btn-lg btn-block btn-huge">Expenditure flows</a>
+          
+              <a href="trade-restrictions/index.html" class="btn btn-success btn-lg btn-block btn-huge">Trade restrictions</a>
+          
+              <a href="food-commodity-markets/index.html" class="btn btn-danger btn-lg btn-block btn-huge">Food commodity markets</a>
+          
+         </div>
+
+      </div>
+
+
+    
+    
+      
+
+      
+      <div class="row" style="margin-top: 60px;">
+
+        <div class="col-md-12" style="margin-top: 20px;">
+          <h3>Showing content for: <span style="color: darkred;">Robots.Txt</span>
+              (9 results)
+          </h3>        
+              <span class="checkbox" >
+              <label><input type="checkbox" onclick='handleClick(this);' value=""  >Restrict to Springer Nature</label>
+             </span>
+               
+            <hr>
+         </div>
+
+
+          <div class="col-md-12"  id="map_container" style="position: relative; width: 100%; height: 500px;">
+            
+          </div>
+
+          
+
+          <div style="display: none;">
+
+            
+      
+            
+      
+            
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/afghanistan/">afghanistan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/angola/">angola</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/albania/">albania</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/united-arab-emirates/">united-arab-emirates</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/argentina/">argentina</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/armenia/">armenia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/antarctica/">antarctica</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/french-southern-and-antarctic-lands/">french-southern-and-antarctic-lands</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/australia/">australia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/austria/">austria</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/azerbaijan/">azerbaijan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/burundi/">burundi</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/belgium/">belgium</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/benin/">benin</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/burkina-faso/">burkina-faso</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/bangladesh/">bangladesh</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/bulgaria/">bulgaria</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/the-bahamas/">the-bahamas</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/bosnia-and-herzegovina/">bosnia-and-herzegovina</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/belarus/">belarus</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/belize/">belize</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/bolivia/">bolivia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/brazil/">brazil</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/brunei/">brunei</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/bhutan/">bhutan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/botswana/">botswana</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/central-african-republic/">central-african-republic</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/canada/">canada</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/switzerland/">switzerland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/chile/">chile</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/china/">china</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/ivory-coast/">ivory-coast</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/cameroon/">cameroon</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/democratic-republic-of-the-congo/">democratic-republic-of-the-congo</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/republic-of-the-congo/">republic-of-the-congo</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/colombia/">colombia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/costa-rica/">costa-rica</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/cuba/">cuba</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/northern-cyprus/">northern-cyprus</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/cyprus/">cyprus</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/czech-republic/">czech-republic</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/germany/">germany</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/djibouti/">djibouti</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/denmark/">denmark</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/dominican-republic/">dominican-republic</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/algeria/">algeria</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/ecuador/">ecuador</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/egypt/">egypt</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/eritrea/">eritrea</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/spain/">spain</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/estonia/">estonia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/ethiopia/">ethiopia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/finland/">finland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/fiji/">fiji</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/falkland-islands/">falkland-islands</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/france/">france</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/french-guiana/">french-guiana</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/gabon/">gabon</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/united-kingdom/">united-kingdom</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/georgia/">georgia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/ghana/">ghana</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/guinea/">guinea</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/gambia/">gambia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/guinea-bissau/">guinea-bissau</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/equatorial-guinea/">equatorial-guinea</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/greece/">greece</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/greenland/">greenland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/guatemala/">guatemala</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/guyana/">guyana</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/honduras/">honduras</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/croatia/">croatia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/haiti/">haiti</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/hungary/">hungary</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/indonesia/">indonesia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/india/">india</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/ireland/">ireland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/iran/">iran</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/iraq/">iraq</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/iceland/">iceland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/israel/">israel</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/italy/">italy</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/jamaica/">jamaica</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/jordan/">jordan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/japan/">japan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/kazakhstan/">kazakhstan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/kenya/">kenya</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/kyrgyzstan/">kyrgyzstan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/cambodia/">cambodia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/south-korea/">south-korea</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/kosovo/">kosovo</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/kuwait/">kuwait</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/laos/">laos</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/lebanon/">lebanon</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/liberia/">liberia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/libya/">libya</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/sri-lanka/">sri-lanka</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/lesotho/">lesotho</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/lithuania/">lithuania</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/luxembourg/">luxembourg</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/latvia/">latvia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/morocco/">morocco</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/moldova/">moldova</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/madagascar/">madagascar</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/mexico/">mexico</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/macedonia/">macedonia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/mali/">mali</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/myanmar/">myanmar</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/montenegro/">montenegro</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/mongolia/">mongolia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/mozambique/">mozambique</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/mauritania/">mauritania</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/malawi/">malawi</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/malaysia/">malaysia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/namibia/">namibia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/new-caledonia/">new-caledonia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/niger/">niger</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/nigeria/">nigeria</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/nicaragua/">nicaragua</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/netherlands/">netherlands</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/norway/">norway</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/nepal/">nepal</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/new-zealand/">new-zealand</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/oman/">oman</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/pakistan/">pakistan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/panama/">panama</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/peru/">peru</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/philippines/">philippines</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/papua-new-guinea/">papua-new-guinea</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/poland/">poland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/puerto-rico/">puerto-rico</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/north-korea/">north-korea</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/portugal/">portugal</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/paraguay/">paraguay</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/qatar/">qatar</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/romania/">romania</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/russia/">russia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/rwanda/">rwanda</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/western-sahara/">western-sahara</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/saudi-arabia/">saudi-arabia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/sudan/">sudan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/south-sudan/">south-sudan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/senegal/">senegal</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/solomon-islands/">solomon-islands</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/sierra-leone/">sierra-leone</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/el-salvador/">el-salvador</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/somaliland/">somaliland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/somalia/">somalia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/republic-of-serbia/">republic-of-serbia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/suriname/">suriname</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/slovakia/">slovakia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/slovenia/">slovenia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/sweden/">sweden</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/swaziland/">swaziland</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/syria/">syria</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/chad/">chad</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/togo/">togo</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/thailand/">thailand</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/tajikistan/">tajikistan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/turkmenistan/">turkmenistan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/east-timor/">east-timor</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/trinidad-and-tobago/">trinidad-and-tobago</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/tunisia/">tunisia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/turkey/">turkey</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/taiwan/">taiwan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/united-republic-of-tanzania/">united-republic-of-tanzania</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/uganda/">uganda</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/ukraine/">ukraine</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/uruguay/">uruguay</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/united-states-of-america/">united-states-of-america</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/uzbekistan/">uzbekistan</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/venezuela/">venezuela</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/vietnam/">vietnam</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/vanuatu/">vanuatu</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/west-bank/">west-bank</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/yemen/">yemen</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/south-africa/">south-africa</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/zambia/">zambia</a>
+                
+              
+      
+                <a href="http://127.0.0.1:8000/robots.txt/zimbabwe/">zimbabwe</a>
+                
+              
+              
+              
+            
+      
+          </div>
+
+
+        <div class="col-md-4" style="margin-top: 20px;">
+
+
+
+            <div class="well">
+              <b>Top Researchers</b>
+              <br>
+              <ol>
+              
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.016074347677.79" target="_blank">Donna&nbsp;Bergmark</a> <a class="badge text-info" title="Tot Publications">1</a></li>
+              
+              </ol>
+            </div>
+
+
+            <div class="well">
+              <b>Top Institutions</b>
+              <br>
+              <ol>
+              
+              </ol>
+            </div>
+
+
+             <div class="well">
+              <b>Top Funders</b>
+              <br>
+              
+              <ol>
+              
+                </ol>
+            </div>
+
+
+
+
+
+
+          </div>
+
+        <div class="col-md-8" style="margin-top: 10px;">
+
+
+              <h5>Top Papers</h5>
+              <hr>
+
+              
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    PROCEEDING&nbsp;<span class="lead" style="color: darkgoldenrod;">Collection synthesis</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1145/544220.544275" target="_blank">10.1145/544220.544275</a>&nbsp;<span class="badge" style="background: goldenrod;">28 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Ubicomp 2001: Ubiquitous Computing, International Conference Atlanta Georgia, USA, September 30–October 2, 2001 Proceedings</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/3-540-45427-6" target="_blank">10.1007/3-540-45427-6</a>&nbsp;<span class="badge" style="background: goldenrod;">11 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Advances in Data Mining. Applications in Medicine, Web Mining, Marketing, Image and Signal Mining, 6th Industrial Conference on Data Mining, ICDM 2006, Leipzig, Germany, July 14-15, 2006. Proceedings</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/11790853" target="_blank">10.1007/11790853</a>&nbsp;<span class="badge" style="background: goldenrod;">8 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">New Developments in Classification and Data Analysis, Proceedings of the Meeting of the Classification and Data Analysis Group (CLADAG) of the Italian Statistical Society, University of Bologna, September 22–24, 2003</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/b138989" target="_blank">10.1007/b138989</a>&nbsp;<span class="badge" style="background: goldenrod;">7 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Dependability Engineering and Complex Systems, Proceedings of the Eleventh International Conference on Dependability and Complex Systems DepCoS-RELCOMEX. June 27–July 1, 2016, Brunów, Poland</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-319-39639-2" target="_blank">10.1007/978-3-319-39639-2</a>&nbsp;<span class="badge" style="background: goldenrod;">5 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Knowledge-Based Information Retrieval and Filtering from the Web</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-1-4757-3739-4" target="_blank">10.1007/978-1-4757-3739-4</a>&nbsp;<span class="badge" style="background: goldenrod;">4 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Advances in Systems, Computing Sciences and Software Engineering, Proceedings of SCSS05</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/1-4020-5263-4" target="_blank">10.1007/1-4020-5263-4</a>&nbsp;<span class="badge" style="background: goldenrod;">2 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Copyright, Property and the Social Contract, The Reconceptualisation of Copyright</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-319-95690-9" target="_blank">10.1007/978-3-319-95690-9</a>&nbsp;<span class="badge" style="background: goldenrod;">0 citations</span>
+                  
+                  </li>
+
+              
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">The World Wide Web</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9781315670478" target="_blank">10.4324/9781315670478</a>&nbsp;<span class="badge" style="background: goldenrod;">0 citations</span>
+                  
+                  </li>
+
+              
+                
+        </div>
+
+      </div>
+
+
+    
+      
+
+
+
+
+
+
+  </div> <!-- /container -->
+
+
+    <div class="container margin50">
+    </div> <!-- /container -->
+
+
+<script>
+
+function handleClick(cb) {
+  // alert("Clicked, new value = " + cb.checked);
+  if (cb.checked == true) {
+    window.location.href="?s=Robots.Txt&restrict=true"
+  } else {
+    window.location.href="?s=Robots.Txt"
+  }
+}
+
+
+  
+</script>
+
+
+
+
+	</div>
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">SN Hack Day Zero Hunger 2018-11-02
+      &nbsp;|&nbsp;<a target="_blank" href="https://grandchallenges.springernature.com/">SN Grand Challenges Programme</a>
+      </p>
+    
+    </div>
+  </footer>
+
+
+
+    <script src="media/static/libs/datamaps/datamaps.world.min.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/static/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="media/static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="media/static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+    <script>
+
+        // http://datamaps.github.io/ 
+        var map = new Datamap({element: document.getElementById('map_container'),
+            done: function(datamap) {
+            datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+                // alert(geography.properties.name);
+
+                // replace spaces with dashes
+                cname = geography.properties.name.replace(/\s+/g, '-');
+
+                // window.location.href="?s=Robots.Txt&country=" + geography.properties.name;
+
+                window.location.href="/robots.txt/" + cname + "/";
+
+            });
+        }});
+
+
+
+    
+
+    </script>
+
+
+    
+
+
+
+    
+
+  </body>
+</html>

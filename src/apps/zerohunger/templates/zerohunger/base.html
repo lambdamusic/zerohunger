@@ -24,8 +24,10 @@
     </script>
     
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+    <script src="{% static 'libs/d3-3.5.3/d3.min.js' %}"></script>
+    <script src="{% static 'libs/topojson/topojson.min.js' %}"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -215,8 +217,6 @@
 
                 // replace spaces with dashes
                 cname = geography.properties.name.replace(/\s+/g, '-');
-
-                // window.location.href="?s={{search_topic}}{% if restrict %}&restrict=true{% endif %}&country=" + geography.properties.name;
 
                 window.location.href="/{{topic_id|url_safe}}/" + cname + "/{% if restrict %}?restrict=true{% endif %}";
 
