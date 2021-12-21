@@ -1,0 +1,195 @@
+{% extends "zerohunger/base.html" %}
+
+{% load static %}
+{% load commontags %}
+
+{% block navbar %}
+
+    {% with thispage="home" %}
+
+    {% include "zerohunger/navbar.html" %}
+
+    {% endwith %}
+
+{% endblock navbar %}
+
+
+  {% block bodycontent %}
+
+  <div class="page-header">
+    {% comment %} <h1>Home</h1> {% endcomment %}
+    Use one of the categories below to start a search
+    {% if search_topic %}&nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>{% endif %}
+  </div>
+  <div id="q" style="display: none;">
+    <pre><code>{{query|linebreaks}}</code></pre>
+  </div>
+
+
+  <div class="container">
+
+
+      {% comment %} BUTTONS SECTION {% endcomment %}
+      <div class="row">
+
+        <div class="col-md-6" style="margin-top: 20px;">
+
+          {% for topic in topics1  %}
+              <a href="{% url 'zerohunger:search_topic'  topic.name|url_safe %}" class="btn {{topic.color}} btn-lg btn-block btn-huge">{{topic.name}}</a>
+          {% endfor %}
+                      
+         </div>
+
+        <div class="col-md-6" style="margin-top: 20px;">
+          {% for topic in topics2  %}
+              <a href="{% url 'zerohunger:search_topic'  topic.name|url_safe %}" class="btn {{topic.color}} btn-lg btn-block btn-huge">{{topic.name}}</a>
+          {% endfor %}
+         </div>
+
+      </div>
+
+
+    
+    {% if search_topic %}
+      
+
+      {% comment %} SEARCH RESULTS SECTION {% endcomment %}
+      <div class="row" style="margin-top: 60px;">
+
+        <div class="col-md-12" style="margin-top: 20px;">
+          <h3>Showing content for: <span style="color: darkred;">{{search_topic|default:"no topic"}}</span>{% if country %}+&nbsp;<span style="color: goldenrod;">{{country}}</span>{% endif %}
+              ({{tot}} results)
+          </h3>        
+              <span class="checkbox" >
+              <label><input type="checkbox" onclick='handleClick(this);' value=""  {% if restrict %}CHECKED{% endif %}>Restrict to Springer Nature</label>
+             </span>
+               
+            <hr>
+         </div>
+
+
+          <div class="col-md-12"  id="map_container" style="position: relative; width: 100%; height: 500px;">
+            {% comment %} MAP  {% endcomment %}
+          </div>
+
+          
+
+          <div style="display: none;">
+
+            {% comment %}
+              trick to generate links with WGET
+            {% endcomment %}
+      
+            {% if topic_id and not country %}
+      
+            
+              {% for c in  COUNTRIES_LIST %}
+      
+                <a href="{% url 'zerohunger:search_topic_country'  topic_id c|url_safe %}">{{c|url_safe}}</a>
+                
+              {% endfor %}
+              
+              
+            {% endif %}
+      
+          </div>
+
+
+        <div class="col-md-4" style="margin-top: 20px;">
+
+
+
+            <div class="well">
+              <b>Top Researchers</b>
+              <br>
+              <ol>
+              {% for f in  res.facets.researchers %}
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher={{f.id}}" target="_blank">{{f.first_name}}&nbsp;{{f.last_name}}</a> <a class="badge text-info" title="Tot Publications">{{f.count}}</a></li>
+              {% endfor %}
+              </ol>
+            </div>
+
+
+            <div class="well">
+              <b>Top Institutions</b>
+              <br>
+              <ol>
+              {% for f in  res.facets.research_orgs %}
+                <li><a href="https://grid.ac/institutes/{{f.id}}" target="_blank">{{f.name}}</a> <a class="badge text-info" title="Tot Publications">{{f.count}}</a></li>
+              {% endfor %}
+              </ol>
+            </div>
+
+
+             <div class="well">
+              <b>Top Funders</b>
+              <br>
+              
+              <ol>
+              {% for f in  res.facets.entity_funder %}
+                <li><a href="https://grid.ac/institutes/{{f.id}}" target="_blank">{{f.name}}</a> <a class="badge text-info" title="Tot Publications">{{f.count}}</a></li>
+              {% endfor %}
+                </ol>
+            </div>
+
+
+
+
+
+
+          </div>
+
+        <div class="col-md-8" style="margin-top: 10px;">
+
+
+              <h5>Top Papers</h5>
+              <hr>
+
+              
+              {% for p in res.publications  %}
+
+                  <li style="margin-bottom: 10px;">
+                    
+                    
+                    {{p.type|upper}}&nbsp;<span class="lead" style="color: darkgoldenrod;">{{p.title}}</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">{{p.journal.title}}</span>&nbsp;<a href="http://dx.doi.org/{{p.doi}}" target="_blank">{{p.doi}}</a>&nbsp;<span class="badge" style="background: goldenrod;">{{p.times_cited}} citations</span>
+                  
+                  </li>
+
+              {% endfor %}
+                
+        </div>
+
+      </div>
+
+
+    {% endif %}
+      
+
+
+
+
+
+
+  </div> <!-- /container -->
+
+
+    <div class="container margin50">
+    </div> <!-- /container -->
+
+
+<script>
+
+function handleClick(cb) {
+  // alert("Clicked, new value = " + cb.checked);
+  if (cb.checked == true) {
+    window.location.href="?s={{search_topic}}&restrict=true{% if country %}&country={{country}}{% endif %}"
+  } else {
+    window.location.href="?s={{search_topic}}{% if country %}&country={{country}}{% endif %}"
+  }
+}
+
+
+  
+</script>
+
+{% endblock bodycontent %}

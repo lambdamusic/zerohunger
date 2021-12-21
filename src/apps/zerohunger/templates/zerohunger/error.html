@@ -1,0 +1,74 @@
+{% extends "zerohunger/base.html" %}
+
+{% load static %}
+
+{% block navbar %}
+
+    {% with thispage="home" %}
+
+    {% include "zerohunger/default-navbar.html" %}
+
+    {% endwith %}
+
+{% endblock navbar %}
+
+
+  {% block bodycontent %}
+
+    <div class="page-header">
+      <h1>Oops!</h1>
+    </div>
+
+
+    <div class="container">
+
+
+      <div class="row">
+
+        <div class="col-md-12" style="margin-top: 20px;">
+          {# <hr>#}
+         <p class="lead lead-plus">Something went wrong.</p>
+         <p class="lead">A problem was encountered while generating this page.<br>
+             Please report this to the SciGraph support team: scigraph@springernature.com</p>
+         <p class="lead">Exception Message:
+           <pre>{{ exception }}</pre>
+         </p>
+
+         <hr>
+         </div>
+
+      </div>
+
+
+
+      <div class="row">
+
+
+        {% if 0 %}
+        <div class="col-md-9">
+
+           <br />
+           <p><b class="text-muted text-uppercase">Details</b></p>
+           <p>The database located at <a class="label label-warning" href="{{endpoint_url}}" target="_blank">{{endpoint_url}}</a> is not responding.</p>
+           <p>If you're an admin user, you can update this settings <a href="/admin/explorer/triplestore/">here</a>.</p>
+
+
+
+
+          </div>
+
+          {% endif %}
+      </div>
+
+
+
+</div> <!-- /container -->
+
+
+    <div class="container margin50">
+
+
+    </div> <!-- /container -->
+
+
+  {% endblock bodycontent %}
