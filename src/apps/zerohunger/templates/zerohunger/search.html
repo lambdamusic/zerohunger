@@ -115,7 +115,7 @@
               <br>
               <ol>
               {% for f in  res.facets.research_orgs %}
-                <li><a href="https://grid.ac/institutes/{{f.id}}" target="_blank">{{f.name}}</a> <a class="badge text-info" title="Tot Publications">{{f.count}}</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org={{f.id}}" target="_blank">{{f.name}}</a> <a class="badge text-info" title="Tot Publications">{{f.count}}</a></li>
               {% endfor %}
               </ol>
             </div>
@@ -127,7 +127,7 @@
               
               <ol>
               {% for f in  res.facets.entity_funder %}
-                <li><a href="https://grid.ac/institutes/{{f.id}}" target="_blank">{{f.name}}</a> <a class="badge text-info" title="Tot Publications">{{f.count}}</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org={{f.id}}" target="_blank">{{f.name}}</a> <a class="badge text-info" title="Tot Publications">{{f.count}}</a></li>
               {% endfor %}
                 </ol>
             </div>

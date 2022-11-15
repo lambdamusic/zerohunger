@@ -13,9 +13,9 @@ from libs.myutils.myutils import print_json
 from .utils import COUNTRIES_LIST
 #
 try:
-    from settings import DIMENSIONS_USR, DIMENSIONS_PSW
+    from settings import DIMENSIONS_API_KEY
 except:
-    print("SETTINGS NOT FOUND: DIMENSIONS_USR, DIMENSIONS_PSW")
+    print("SETTINGS NOT FOUND: DIMENSIONS_API_KEY")
     raise
 
 DEBUG_MODE = False  # set to True to print out useful info in the console
@@ -70,11 +70,11 @@ TOPICS = [
 QUERY = """
     search publications in full_data for "(%s AND SDG) OR (%s AND MDG)%s"
     where (year in [2000:2018]%s) 
-    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited
+    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited
     return in "facets"
     funders[name + country_name] as "entity_funder" 
-    return in "facets" research_orgs[all]
-    return in "facets" researchers[all]   
+    return in "facets" research_orgs[id+name]
+    return in "facets" researchers[id+first_name+last_name]   
     """
 
 COUNTRY_CLAUSE = " AND %s "
@@ -103,10 +103,12 @@ def home(request, topic=None, countryname=None):
 
     if searchterm:
         q = construct_query(searchterm, restrict, country)
-        res = do_query(q)
-        # print type(res)
-        # print res.keys()
-        # res = json.loads(res)
+        try:
+            res = do_query(q)
+        except Exception as e:
+            print("++++ERROR =>")
+            print(q)
+            return render(request, 'zerohunger/error.html', {"exception": str(e)})
         tot = res['_stats']['total_count']
 
     context = {
@@ -143,8 +145,8 @@ def construct_query(s, restrict, country):
 def do_query(query):
     """
     """
-
-    login = {'username': DIMENSIONS_USR, 'password': DIMENSIONS_PSW}
+    # login = {'username': DIMENSIONS_USR, 'password': DIMENSIONS_PSW}
+    login = {'key': DIMENSIONS_API_KEY}
 
     #   Send credentials to login url to retrieve token. Raise
     #   an error, if the return code indicates a problem.

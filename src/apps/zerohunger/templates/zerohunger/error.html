@@ -6,7 +6,7 @@
 
     {% with thispage="home" %}
 
-    {% include "zerohunger/default-navbar.html" %}
+    {% include "zerohunger/navbar.html" %}
 
     {% endwith %}
 
@@ -29,7 +29,6 @@
           {# <hr>#}
          <p class="lead lead-plus">Something went wrong.</p>
          <p class="lead">A problem was encountered while generating this page.<br>
-             Please report this to the SciGraph support team: scigraph@springernature.com</p>
          <p class="lead">Exception Message:
            <pre>{{ exception }}</pre>
          </p>
@@ -44,20 +43,6 @@
       <div class="row">
 
 
-        {% if 0 %}
-        <div class="col-md-9">
-
-           <br />
-           <p><b class="text-muted text-uppercase">Details</b></p>
-           <p>The database located at <a class="label label-warning" href="{{endpoint_url}}" target="_blank">{{endpoint_url}}</a> is not responding.</p>
-           <p>If you're an admin user, you can update this settings <a href="/admin/explorer/triplestore/">here</a>.</p>
-
-
-
-
-          </div>
-
-          {% endif %}
       </div>
 
 
