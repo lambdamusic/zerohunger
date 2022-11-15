@@ -7,14 +7,14 @@
 <html lang="en">
   <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2000254-3"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4B4FDV3TR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-2000254-3');
+  gtag('config', 'G-T4B4FDV3TR');
 </script>
 
     <script>
@@ -31,9 +31,11 @@
         }];
     </script>
     
-
     <script src="../media/static/libs/d3-3.5.3/d3.min.js"></script>
     <script src="../media/static/libs/topojson/topojson.min.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -202,7 +204,7 @@
     &nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>
   </div>
   <div id="q" style="display: none;">
-    <pre><code><p><br>    search publications in full_data for &quot;(Malnutrition AND SDG) OR (Malnutrition AND MDG)&quot;<br>    where (year in [2000:2018]) <br>    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[all]<br>    return in &quot;facets&quot; researchers[all]   <br>    </p></code></pre>
+    <pre><code><p><br>    search publications in title_abstract_only for &quot;(Malnutrition AND SDG) OR (Malnutrition AND MDG)&quot;<br>    where (year in [2000:2018]) <br>    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited limit 20<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[id+name] limit 20<br>    return in &quot;facets&quot; researchers[id+first_name+last_name]  limit 20<br>    </p></code></pre>
   </div>
 
 
@@ -254,7 +256,7 @@
 
         <div class="col-md-12" style="margin-top: 20px;">
           <h3>Showing content for: <span style="color: darkred;">Malnutrition</span>
-              (21882 results)
+              (177 results)
           </h3>        
               <span class="checkbox" >
               <label><input type="checkbox" onclick='handleClick(this);' value=""  >Restrict to Springer Nature</label>
@@ -1006,45 +1008,45 @@
               <br>
               <ol>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013417056762.57" target="_blank">Zulfiqar Ahmed&nbsp;Bhutta</a> <a class="badge text-info" title="Tot Publications">110</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013417056762.57" target="_blank">Zulfiqar Ahmed&nbsp;Bhutta</a> <a class="badge text-info" title="Tot Publications">7</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010444343517.82" target="_blank">Polona Šprajc Polona&nbsp;Šprajc</a> <a class="badge text-info" title="Tot Publications">99</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01264143366.50" target="_blank">Jessica C&nbsp;Fanzo</a> <a class="badge text-info" title="Tot Publications">5</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011132307754.74" target="_blank">Yvonne&nbsp;Ziegler</a> <a class="badge text-info" title="Tot Publications">98</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0771473603.79" target="_blank">Jai Kumar&nbsp;Das</a> <a class="badge text-info" title="Tot Publications">4</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.014650700503.98" target="_blank">Olja&nbsp;Arsenijević</a> <a class="badge text-info" title="Tot Publications">98</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01036613771.49" target="_blank">Edmund Tetteh&nbsp;Nartey</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.07602005311.32" target="_blank">Iztok&nbsp;Podbregar</a> <a class="badge text-info" title="Tot Publications">98</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01037045413.37" target="_blank">Sara E&nbsp;Wuehler</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.07715076317.09" target="_blank">Dragan&nbsp;Trivan</a> <a class="badge text-info" title="Tot Publications">98</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011076250734.19" target="_blank">Kadambot H M&nbsp;Siddique</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015711743217.84" target="_blank">Robert Edward&nbsp;Black</a> <a class="badge text-info" title="Tot Publications">35</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012703633461.00" target="_blank">Marc J&nbsp;Cohen</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01032477410.37" target="_blank">Thomas F&nbsp;Clasen</a> <a class="badge text-info" title="Tot Publications">27</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01275030343.10" target="_blank">Edem Magdalene Afua&nbsp;Tette</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01074652471.29" target="_blank">Geoffrey T&nbsp;Fong</a> <a class="badge text-info" title="Tot Publications">25</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01343143543.77" target="_blank">Eric K&nbsp;Sifah</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012105053737.07" target="_blank">Sankaran Venkata&nbsp;Subramanian</a> <a class="badge text-info" title="Tot Publications">25</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013624436473.37" target="_blank">Brian&nbsp;Thompson</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01214117665.39" target="_blank">Tahmeed&nbsp;Ahmed</a> <a class="badge text-info" title="Tot Publications">25</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001014230.37" target="_blank">Olatunji O&nbsp;Adetokunboh</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0711411411.50" target="_blank">Cesar Gomes&nbsp;Victora</a> <a class="badge text-info" title="Tot Publications">25</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003120104.55" target="_blank">Molla Mesele&nbsp;Wassie</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010273406545.71" target="_blank">Vivero-Pol Jose&nbsp;Luis</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01007375027.42" target="_blank">Marcello A&nbsp;Tonelli</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011301067511.75" target="_blank">Ferrando&nbsp;Tomaso</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010100474372.19" target="_blank">K Srinath Srinath&nbsp;Reddy</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012310237337.47" target="_blank">Christopher J L&nbsp;Murray</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01016777626.04" target="_blank">Monika&nbsp;Blössner</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01341526633.19" target="_blank">Majid&nbsp;Ezzati</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01030022610.73" target="_blank">Kebede&nbsp;Deribe</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01372561064.41" target="_blank">Joy Elizabeth&nbsp;Lawn</a> <a class="badge text-info" title="Tot Publications">24</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01060133020.83" target="_blank">Leander R&nbsp;Buisman</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01156362044.18" target="_blank">Ziad Ahmed&nbsp;Memish</a> <a class="badge text-info" title="Tot Publications">23</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01066441373.46" target="_blank">Caroline&nbsp;De Schacht</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01264143366.50" target="_blank">Jessica C&nbsp;Fanzo</a> <a class="badge text-info" title="Tot Publications">23</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010704647673.93" target="_blank">Janice&nbsp;Meerman</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012674030511.30" target="_blank">Mattei&nbsp;Ugo</a> <a class="badge text-info" title="Tot Publications">23</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01072257662.10" target="_blank">Dileep Vishnu&nbsp;Mavalankar</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
               </ol>
             </div>
@@ -1055,45 +1057,45 @@
               <br>
               <ol>
               
-                <li><a href="https://grid.ac/institutes/grid.38142.3c" target="_blank">Harvard University</a> <a class="badge text-info" title="Tot Publications">245</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.3575.4" target="_blank">World Health Organization</a> <a class="badge text-info" title="Tot Publications">8</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.8991.9" target="_blank">London School of Hygiene &amp; Tropical Medicine</a> <a class="badge text-info" title="Tot Publications">227</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.431778.e" target="_blank">World Bank</a> <a class="badge text-info" title="Tot Publications">8</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.21107.35" target="_blank">Johns Hopkins University</a> <a class="badge text-info" title="Tot Publications">214</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.420153.1" target="_blank">Food and Agriculture Organization of the United Nations</a> <a class="badge text-info" title="Tot Publications">7</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.3575.4" target="_blank">World Health Organization</a> <a class="badge text-info" title="Tot Publications">214</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.21729.3f" target="_blank">Columbia University</a> <a class="badge text-info" title="Tot Publications">6</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.83440.3b" target="_blank">University College London</a> <a class="badge text-info" title="Tot Publications">129</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.38142.3c" target="_blank">Harvard University</a> <a class="badge text-info" title="Tot Publications">6</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.4991.5" target="_blank">University of Oxford</a> <a class="badge text-info" title="Tot Publications">128</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.7147.5" target="_blank">Aga Khan University</a> <a class="badge text-info" title="Tot Publications">6</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.21729.3f" target="_blank">Columbia University</a> <a class="badge text-info" title="Tot Publications">113</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.42327.30" target="_blank">Hospital for Sick Children</a> <a class="badge text-info" title="Tot Publications">5</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.34477.33" target="_blank">University of Washington</a> <a class="badge text-info" title="Tot Publications">104</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.21107.35" target="_blank">Johns Hopkins University</a> <a class="badge text-info" title="Tot Publications">4</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.7836.a" target="_blank">University of Cape Town</a> <a class="badge text-info" title="Tot Publications">97</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.34477.33" target="_blank">University of Washington</a> <a class="badge text-info" title="Tot Publications">4</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.11951.3d" target="_blank">University of the Witwatersrand</a> <a class="badge text-info" title="Tot Publications">95</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.419346.d" target="_blank">International Food Policy Research Institute</a> <a class="badge text-info" title="Tot Publications">4</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.431778.e" target="_blank">World Bank</a> <a class="badge text-info" title="Tot Publications">92</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.8652.9" target="_blank">University of Ghana</a> <a class="badge text-info" title="Tot Publications">4</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.7147.5" target="_blank">Aga Khan University</a> <a class="badge text-info" title="Tot Publications">91</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11956.3a" target="_blank">Stellenbosch University</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.17091.3e" target="_blank">University of British Columbia</a> <a class="badge text-info" title="Tot Publications">88</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.413355.5" target="_blank">African Population and Health Research Center</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.7445.2" target="_blank">Imperial College London</a> <a class="badge text-info" title="Tot Publications">87</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.420318.c" target="_blank">United Nations Children&#x27;s Fund</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.420318.c" target="_blank">United Nations Children&#x27;s Fund</a> <a class="badge text-info" title="Tot Publications">86</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.429865.4" target="_blank">Oxfam America</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.189967.8" target="_blank">Emory University</a> <a class="badge text-info" title="Tot Publications">84</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.429997.8" target="_blank">Tufts University</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.17063.33" target="_blank">University of Toronto</a> <a class="badge text-info" title="Tot Publications">79</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.4399.7" target="_blank">Institut de Recherche pour le Développement</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1003.2" target="_blank">University of Queensland</a> <a class="badge text-info" title="Tot Publications">75</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.7123.7" target="_blank">Addis Ababa University</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.414142.6" target="_blank">International Centre for Diarrhoeal Disease Research</a> <a class="badge text-info" title="Tot Publications">74</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.7445.2" target="_blank">Imperial College London</a> <a class="badge text-info" title="Tot Publications">3</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1013.3" target="_blank">University of Sydney</a> <a class="badge text-info" title="Tot Publications">73</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10025.36" target="_blank">University of Liverpool</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
               </ol>
             </div>
@@ -1105,45 +1107,45 @@
               
               <ol>
               
-                <li><a href="https://grid.ac/institutes/grid.418309.7" target="_blank">Bill &amp; Melinda Gates Foundation</a> <a class="badge text-info" title="Tot Publications">169</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.3575.4" target="_blank">World Health Organization</a> <a class="badge text-info" title="Tot Publications">9</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.52788.30" target="_blank">Wellcome Trust</a> <a class="badge text-info" title="Tot Publications">165</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.418309.7" target="_blank">Bill &amp; Melinda Gates Foundation</a> <a class="badge text-info" title="Tot Publications">5</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.3575.4" target="_blank">World Health Organization</a> <a class="badge text-info" title="Tot Publications">140</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.14105.31" target="_blank">Medical Research Council</a> <a class="badge text-info" title="Tot Publications">4</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.14105.31" target="_blank">Medical Research Council</a> <a class="badge text-info" title="Tot Publications">115</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.270680.b" target="_blank">European Commission</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.270680.b" target="_blank">European Commission</a> <a class="badge text-info" title="Tot Publications">98</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.420089.7" target="_blank">Eunice Kennedy Shriver National Institute of Child Health and Human Development</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.420285.9" target="_blank">United States Agency for International Development</a> <a class="badge text-info" title="Tot Publications">90</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.420285.9" target="_blank">United States Agency for International Development</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.434257.3" target="_blank">Economic and Social Research Council</a> <a class="badge text-info" title="Tot Publications">89</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.420488.2" target="_blank">Dutch Research Council</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.420089.7" target="_blank">Eunice Kennedy Shriver National Institute of Child Health and Human Development</a> <a class="badge text-info" title="Tot Publications">88</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.52788.30" target="_blank">Wellcome Trust</a> <a class="badge text-info" title="Tot Publications">2</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.451056.3" target="_blank">National Institute for Health Research</a> <a class="badge text-info" title="Tot Publications">81</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.240871.8" target="_blank">St. Jude Children&#x27;s Research Hospital</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.420318.c" target="_blank">United Nations Children&#x27;s Fund</a> <a class="badge text-info" title="Tot Publications">59</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.247135.6" target="_blank">Rockefeller Foundation</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.419681.3" target="_blank">National Institute of Allergy and Infectious Diseases</a> <a class="badge text-info" title="Tot Publications">53</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.248883.d" target="_blank">Canadian Institutes of Health Research</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.453035.4" target="_blank">Fogarty International Center</a> <a class="badge text-info" title="Tot Publications">51</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.39364.3b" target="_blank">Ministry of Economic Affairs and Climate Policy</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.54432.34" target="_blank">Japan Society for the Promotion of Science</a> <a class="badge text-info" title="Tot Publications">38</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.414102.2" target="_blank">Department of Health</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.416738.f" target="_blank">Centers for Disease Control and Prevention</a> <a class="badge text-info" title="Tot Publications">37</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.416738.f" target="_blank">Centers for Disease Control and Prevention</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.425888.b" target="_blank">Swiss National Science Foundation</a> <a class="badge text-info" title="Tot Publications">32</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.416868.5" target="_blank">National Institute of Mental Health</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.248883.d" target="_blank">Canadian Institutes of Health Research</a> <a class="badge text-info" title="Tot Publications">31</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.419475.a" target="_blank">National Institute on Aging</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.419635.c" target="_blank">National Institute of Diabetes and Digestive and Kidney Diseases</a> <a class="badge text-info" title="Tot Publications">30</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.420318.c" target="_blank">United Nations Children&#x27;s Fund</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.419475.a" target="_blank">National Institute on Aging</a> <a class="badge text-info" title="Tot Publications">28</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.423193.e" target="_blank">British Council</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.8682.4" target="_blank">Natural Environment Research Council</a> <a class="badge text-info" title="Tot Publications">26</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.425921.9" target="_blank">Ministry of Health and Care Services</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.280664.e" target="_blank">National Institute of Environmental Health Sciences</a> <a class="badge text-info" title="Tot Publications">25</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.431933.f" target="_blank">Department of Education, Skills and Employment</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
                 </ol>
             </div>
@@ -1167,7 +1169,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global and regional mortality from 235 causes of death for 20 age groups in 1990 and 2010: a systematic analysis for the Global Burden of Disease Study 2010</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(12)61728-0" target="_blank">10.1016/s0140-6736(12)61728-0</a>&nbsp;<span class="badge" style="background: goldenrod;">9596 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">The global burden of kidney disease and the sustainable development goals</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Bulletin of the World Health Organization</span>&nbsp;<a href="http://dx.doi.org/10.2471/blt.17.206441" target="_blank">10.2471/blt.17.206441</a>&nbsp;<span class="badge" style="background: goldenrod;">401 citations</span>
                   
                   </li>
 
@@ -1176,7 +1178,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">A comparative risk assessment of burden of disease and injury attributable to 67 risk factors and risk factor clusters in 21 regions, 1990–2010: a systematic analysis for the Global Burden of Disease Study 2010</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(12)61766-8" target="_blank">10.1016/s0140-6736(12)61766-8</a>&nbsp;<span class="badge" style="background: goldenrod;">8130 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Maternal and child undernutrition: effective action at national level</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(07)61694-8" target="_blank">10.1016/s0140-6736(07)61694-8</a>&nbsp;<span class="badge" style="background: goldenrod;">335 citations</span>
                   
                   </li>
 
@@ -1185,7 +1187,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national prevalence of overweight and obesity in children and adults during 1980–2013: a systematic analysis for the Global Burden of Disease Study 2013</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(14)60460-8" target="_blank">10.1016/s0140-6736(14)60460-8</a>&nbsp;<span class="badge" style="background: goldenrod;">7616 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Measuring progress from 1990 to 2017 and projecting attainment to 2030 of the health-related Sustainable Development Goals for 195 countries and territories: a systematic analysis for the Global Burden of Disease Study 2017</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(18)32281-5" target="_blank">10.1016/s0140-6736(18)32281-5</a>&nbsp;<span class="badge" style="background: goldenrod;">277 citations</span>
                   
                   </li>
 
@@ -1194,7 +1196,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Disability-adjusted life years (DALYs) for 291 diseases and injuries in 21 regions, 1990–2010: a systematic analysis for the Global Burden of Disease Study 2010</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(12)61689-4" target="_blank">10.1016/s0140-6736(12)61689-4</a>&nbsp;<span class="badge" style="background: goldenrod;">6181 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Trends in mild, moderate, and severe stunting and underweight, and progress towards MDG 1 in 141 developing countries: a systematic analysis of population representative data</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(12)60647-3" target="_blank">10.1016/s0140-6736(12)60647-3</a>&nbsp;<span class="badge" style="background: goldenrod;">260 citations</span>
                   
                   </li>
 
@@ -1203,7 +1205,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Years lived with disability (YLDs) for 1160 sequelae of 289 diseases and injuries 1990–2010: a systematic analysis for the Global Burden of Disease Study 2010</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(12)61729-2" target="_blank">10.1016/s0140-6736(12)61729-2</a>&nbsp;<span class="badge" style="background: goldenrod;">5291 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Agroforestry and the achievement of the Millennium Development Goals</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Agroforestry Systems</span>&nbsp;<a href="http://dx.doi.org/10.1023/b:agfo.0000028986.37502.7c" target="_blank">10.1023/b:agfo.0000028986.37502.7c</a>&nbsp;<span class="badge" style="background: goldenrod;">240 citations</span>
                   
                   </li>
 
@@ -1212,7 +1214,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Maternal and child undernutrition and overweight in low-income and middle-income countries</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(13)60937-x" target="_blank">10.1016/s0140-6736(13)60937-x</a>&nbsp;<span class="badge" style="background: goldenrod;">3886 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Sustaining healthy diets: The role of capture fisheries and aquaculture for improving nutrition in the post-2015 era</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Food Policy</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.foodpol.2016.02.005" target="_blank">10.1016/j.foodpol.2016.02.005</a>&nbsp;<span class="badge" style="background: goldenrod;">210 citations</span>
                   
                   </li>
 
@@ -1221,7 +1223,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Maternal and child undernutrition: global and regional exposures and health consequences</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(07)61690-0" target="_blank">10.1016/s0140-6736(07)61690-0</a>&nbsp;<span class="badge" style="background: goldenrod;">3648 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Urban–rural differentials in child malnutrition: Trends and socioeconomic correlates in sub-Saharan Africa</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Health &amp; Place</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.healthplace.2006.01.004" target="_blank">10.1016/j.healthplace.2006.01.004</a>&nbsp;<span class="badge" style="background: goldenrod;">178 citations</span>
                   
                   </li>
 
@@ -1230,7 +1232,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national incidence, prevalence, and years lived with disability for 328 diseases and injuries for 195 countries, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(17)32154-2" target="_blank">10.1016/s0140-6736(17)32154-2</a>&nbsp;<span class="badge" style="background: goldenrod;">3494 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Food security for Africa: an urgent global challenge</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Agriculture &amp; Food Security</span>&nbsp;<a href="http://dx.doi.org/10.1186/2048-7010-1-2" target="_blank">10.1186/2048-7010-1-2</a>&nbsp;<span class="badge" style="background: goldenrod;">155 citations</span>
                   
                   </li>
 
@@ -1239,7 +1241,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Health professionals for a new century: transforming education to strengthen health systems in an interdependent world</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(10)61854-5" target="_blank">10.1016/s0140-6736(10)61854-5</a>&nbsp;<span class="badge" style="background: goldenrod;">2963 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Malnutrition among children under the age of five in the Democratic Republic of Congo (DRC): does geographic location matter?</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">BMC Public Health</span>&nbsp;<a href="http://dx.doi.org/10.1186/1471-2458-11-261" target="_blank">10.1186/1471-2458-11-261</a>&nbsp;<span class="badge" style="background: goldenrod;">152 citations</span>
                   
                   </li>
 
@@ -1248,7 +1250,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">The story of phosphorus: Global food security and food for thought</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Global Environmental Change</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.gloenvcha.2008.10.009" target="_blank">10.1016/j.gloenvcha.2008.10.009</a>&nbsp;<span class="badge" style="background: goldenrod;">2844 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Socio-economic inequalities in childhood mortality in low- and middle-income countries: a review of the international evidence</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">British Medical Bulletin</span>&nbsp;<a href="http://dx.doi.org/10.1093/bmb/ldp048" target="_blank">10.1093/bmb/ldp048</a>&nbsp;<span class="badge" style="background: goldenrod;">143 citations</span>
                   
                   </li>
 
@@ -1257,7 +1259,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national causes of child mortality: an updated systematic analysis for 2010 with time trends since 2000</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(12)60560-1" target="_blank">10.1016/s0140-6736(12)60560-1</a>&nbsp;<span class="badge" style="background: goldenrod;">2664 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Methodology for estimating regional and global trends of child malnutrition</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">International Journal of Epidemiology</span>&nbsp;<a href="http://dx.doi.org/10.1093/ije/dyh202" target="_blank">10.1093/ije/dyh202</a>&nbsp;<span class="badge" style="background: goldenrod;">101 citations</span>
                   
                   </li>
 
@@ -1266,7 +1268,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national age-sex-specific mortality for 282 causes of death in 195 countries and territories, 1980–2017: a systematic analysis for the Global Burden of Disease Study 2017</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(18)32203-7" target="_blank">10.1016/s0140-6736(18)32203-7</a>&nbsp;<span class="badge" style="background: goldenrod;">2659 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Sustainable development goal 2: Improved targets and indicators for agriculture and food security</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Ambio</span>&nbsp;<a href="http://dx.doi.org/10.1007/s13280-018-1101-4" target="_blank">10.1007/s13280-018-1101-4</a>&nbsp;<span class="badge" style="background: goldenrod;">100 citations</span>
                   
                   </li>
 
@@ -1275,7 +1277,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national age-sex specific mortality for 264 causes of death, 1980–2016: a systematic analysis for the Global Burden of Disease Study 2016</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(17)32152-9" target="_blank">10.1016/s0140-6736(17)32152-9</a>&nbsp;<span class="badge" style="background: goldenrod;">2604 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">The Global Nutrition Report 2014: Actions and Accountability to Accelerate the World’s Progress on Nutrition</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Journal of Nutrition</span>&nbsp;<a href="http://dx.doi.org/10.3945/jn.114.206078" target="_blank">10.3945/jn.114.206078</a>&nbsp;<span class="badge" style="background: goldenrod;">94 citations</span>
                   
                   </li>
 
@@ -1284,7 +1286,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national causes of child mortality in 2008: a systematic analysis</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(10)60549-1" target="_blank">10.1016/s0140-6736(10)60549-1</a>&nbsp;<span class="badge" style="background: goldenrod;">2090 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Preventing deaths due to the hypertensive disorders of pregnancy</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Best Practice &amp; Research Clinical Obstetrics &amp; Gynaecology</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.bpobgyn.2016.05.005" target="_blank">10.1016/j.bpobgyn.2016.05.005</a>&nbsp;<span class="badge" style="background: goldenrod;">82 citations</span>
                   
                   </li>
 
@@ -1293,7 +1295,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national causes of child mortality in 2000–13, with projections to inform post-2015 priorities: an updated systematic analysis</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(14)61698-6" target="_blank">10.1016/s0140-6736(14)61698-6</a>&nbsp;<span class="badge" style="background: goldenrod;">1934 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Integrating nutrition and child development interventions: scientific basis, evidence of impact, and implementation considerations.</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Advances in Nutrition</span>&nbsp;<a href="http://dx.doi.org/10.3945/an.115.010348" target="_blank">10.3945/an.115.010348</a>&nbsp;<span class="badge" style="background: goldenrod;">80 citations</span>
                   
                   </li>
 
@@ -1302,7 +1304,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national comparative risk assessment of 79 behavioural, environmental and occupational, and metabolic risks or clusters of risks in 188 countries, 1990–2013: a systematic analysis for the Global Burden of Disease Study 2013</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(15)00128-2" target="_blank">10.1016/s0140-6736(15)00128-2</a>&nbsp;<span class="badge" style="background: goldenrod;">1859 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Sustainable food systems—a health perspective</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Sustainability Science</span>&nbsp;<a href="http://dx.doi.org/10.1007/s11625-018-0586-x" target="_blank">10.1007/s11625-018-0586-x</a>&nbsp;<span class="badge" style="background: goldenrod;">76 citations</span>
                   
                   </li>
 
@@ -1311,7 +1313,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global, regional, and national comparative risk assessment of 84 behavioural, environmental and occupational, and metabolic risks or clusters of risks for 195 countries and territories, 1990–2017: a systematic analysis for the Global Burden of Disease Study 2017</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(18)32225-6" target="_blank">10.1016/s0140-6736(18)32225-6</a>&nbsp;<span class="badge" style="background: goldenrod;">1848 citations</span>
+                    CHAPTER&nbsp;<span class="lead" style="color: darkgoldenrod;">Hunger and malnutrition</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1017/cbo9780511807633.007" target="_blank">10.1017/cbo9780511807633.007</a>&nbsp;<span class="badge" style="background: goldenrod;">76 citations</span>
                   
                   </li>
 
@@ -1320,7 +1322,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Human nutrition, the gut microbiome and the immune system</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Nature</span>&nbsp;<a href="http://dx.doi.org/10.1038/nature10213" target="_blank">10.1038/nature10213</a>&nbsp;<span class="badge" style="background: goldenrod;">1693 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Assessing the impact of migration on food and nutrition security</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Food Policy</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.foodpol.2010.11.005" target="_blank">10.1016/j.foodpol.2010.11.005</a>&nbsp;<span class="badge" style="background: goldenrod;">75 citations</span>
                   
                   </li>
 
@@ -1329,7 +1331,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">The Lancet Commission on pollution and health</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(17)32345-0" target="_blank">10.1016/s0140-6736(17)32345-0</a>&nbsp;<span class="badge" style="background: goldenrod;">1632 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global Cholera Epidemiology: Opportunities to Reduce the Burden of Cholera by 2030</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Journal of Infectious Diseases</span>&nbsp;<a href="http://dx.doi.org/10.1093/infdis/jiy486" target="_blank">10.1093/infdis/jiy486</a>&nbsp;<span class="badge" style="background: goldenrod;">70 citations</span>
                   
                   </li>
 
@@ -1338,7 +1340,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Global Surgery 2030: evidence and solutions for achieving health, welfare, and economic development</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(15)60160-x" target="_blank">10.1016/s0140-6736(15)60160-x</a>&nbsp;<span class="badge" style="background: goldenrod;">1551 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Addressing the challenges of climate change and biofuel production for food and nutrition security</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Food Research International</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.foodres.2010.03.010" target="_blank">10.1016/j.foodres.2010.03.010</a>&nbsp;<span class="badge" style="background: goldenrod;">69 citations</span>
                   
                   </li>
 
@@ -1429,8 +1431,6 @@ function handleClick(cb) {
 
                 // replace spaces with dashes
                 cname = geography.properties.name.replace(/\s+/g, '-').toLowerCase();
-
-                // window.location.href="?s=Malnutrition&country=" + geography.properties.name;
 
                 window.location.href="/malnutrition/" + cname + "/";
 

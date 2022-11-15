@@ -7,14 +7,14 @@
 <html lang="en">
   <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2000254-3"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4B4FDV3TR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-2000254-3');
+  gtag('config', 'G-T4B4FDV3TR');
 </script>
 
     <script>
@@ -31,9 +31,11 @@
         }];
     </script>
     
+    <script src="media/static/libs/d3-3.5.3/d3.min.js"></script>
+    <script src="media/static/libs/topojson/topojson.min.js"></script>
 
-    <script src="../media/static/libs/d3-3.5.3/d3.min.js"></script>
-    <script src="../media/static/libs/topojson/topojson.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -202,7 +204,7 @@
     &nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>
   </div>
   <div id="q" style="display: none;">
-    <pre><code><p><br>    search publications in full_data for &quot;(Robots.Txt AND SDG) OR (Robots.Txt AND MDG)&quot;<br>    where (year in [2000:2018]) <br>    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[all]<br>    return in &quot;facets&quot; researchers[all]   <br>    </p></code></pre>
+    <pre><code><p><br>    search publications in title_abstract_only for &quot;(Robots.Txt AND SDG) OR (Robots.Txt AND MDG)&quot;<br>    where (year in [2000:2018]) <br>    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited limit 20<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[id+name] limit 20<br>    return in &quot;facets&quot; researchers[id+first_name+last_name]  limit 20<br>    </p></code></pre>
   </div>
 
 
@@ -254,7 +256,7 @@
 
         <div class="col-md-12" style="margin-top: 20px;">
           <h3>Showing content for: <span style="color: darkred;">Robots.Txt</span>
-              (9 results)
+              (0 results)
           </h3>        
               <span class="checkbox" >
               <label><input type="checkbox" onclick='handleClick(this);' value=""  >Restrict to Springer Nature</label>
@@ -1006,8 +1008,6 @@
               <br>
               <ol>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.016074347677.79" target="_blank">Donna&nbsp;Bergmark</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
               </ol>
             </div>
 
@@ -1044,87 +1044,6 @@
               <hr>
 
               
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    PROCEEDING&nbsp;<span class="lead" style="color: darkgoldenrod;">Collection synthesis</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1145/544220.544275" target="_blank">10.1145/544220.544275</a>&nbsp;<span class="badge" style="background: goldenrod;">28 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Ubicomp 2001: Ubiquitous Computing, International Conference Atlanta Georgia, USA, September 30–October 2, 2001 Proceedings</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/3-540-45427-6" target="_blank">10.1007/3-540-45427-6</a>&nbsp;<span class="badge" style="background: goldenrod;">11 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Advances in Data Mining. Applications in Medicine, Web Mining, Marketing, Image and Signal Mining, 6th Industrial Conference on Data Mining, ICDM 2006, Leipzig, Germany, July 14-15, 2006. Proceedings</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/11790853" target="_blank">10.1007/11790853</a>&nbsp;<span class="badge" style="background: goldenrod;">8 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">New Developments in Classification and Data Analysis, Proceedings of the Meeting of the Classification and Data Analysis Group (CLADAG) of the Italian Statistical Society, University of Bologna, September 22–24, 2003</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/b138989" target="_blank">10.1007/b138989</a>&nbsp;<span class="badge" style="background: goldenrod;">7 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Dependability Engineering and Complex Systems, Proceedings of the Eleventh International Conference on Dependability and Complex Systems DepCoS-RELCOMEX. June 27–July 1, 2016, Brunów, Poland</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-319-39639-2" target="_blank">10.1007/978-3-319-39639-2</a>&nbsp;<span class="badge" style="background: goldenrod;">5 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Knowledge-Based Information Retrieval and Filtering from the Web</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-1-4757-3739-4" target="_blank">10.1007/978-1-4757-3739-4</a>&nbsp;<span class="badge" style="background: goldenrod;">4 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Advances in Systems, Computing Sciences and Software Engineering, Proceedings of SCSS05</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/1-4020-5263-4" target="_blank">10.1007/1-4020-5263-4</a>&nbsp;<span class="badge" style="background: goldenrod;">2 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Copyright, Property and the Social Contract, The Reconceptualisation of Copyright</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-319-95690-9" target="_blank">10.1007/978-3-319-95690-9</a>&nbsp;<span class="badge" style="background: goldenrod;">0 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">The World Wide Web</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9781315670478" target="_blank">10.4324/9781315670478</a>&nbsp;<span class="badge" style="background: goldenrod;">0 citations</span>
-                  
-                  </li>
-
               
                 
         </div>
@@ -1212,8 +1131,6 @@ function handleClick(cb) {
 
                 // replace spaces with dashes
                 cname = geography.properties.name.replace(/\s+/g, '-').toLowerCase();
-
-                // window.location.href="?s=Robots.Txt&country=" + geography.properties.name;
 
                 window.location.href="/robots.txt/" + cname + "/";
 

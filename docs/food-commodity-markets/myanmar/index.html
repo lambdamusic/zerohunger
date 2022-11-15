@@ -7,14 +7,14 @@
 <html lang="en">
   <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2000254-3"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4B4FDV3TR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-2000254-3');
+  gtag('config', 'G-T4B4FDV3TR');
 </script>
 
     <script>
@@ -31,9 +31,11 @@
         }];
     </script>
     
-
     <script src="../../media/static/libs/d3-3.5.3/d3.min.js"></script>
     <script src="../../media/static/libs/topojson/topojson.min.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -202,7 +204,7 @@
     &nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>
   </div>
   <div id="q" style="display: none;">
-    <pre><code><p><br>    search publications in full_data for &quot;(Food Commodity Markets AND SDG) OR (Food Commodity Markets AND MDG) AND Myanmar &quot;<br>    where (year in [2000:2018]) <br>    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[all]<br>    return in &quot;facets&quot; researchers[all]   <br>    </p></code></pre>
+    <pre><code><p><br>    search publications in title_abstract_only for &quot;(Food Commodity Markets AND SDG) OR (Food Commodity Markets AND MDG) AND Myanmar &quot;<br>    where (year in [2000:2018]) <br>    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited limit 20<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[id+name] limit 20<br>    return in &quot;facets&quot; researchers[id+first_name+last_name]  limit 20<br>    </p></code></pre>
   </div>
 
 
@@ -254,7 +256,7 @@
 
         <div class="col-md-12" style="margin-top: 20px;">
           <h3>Showing content for: <span style="color: darkred;">Food Commodity Markets</span>+&nbsp;<span style="color: goldenrod;">Myanmar</span>
-              (4168 results)
+              (1 results)
           </h3>        
               <span class="checkbox" >
               <label><input type="checkbox" onclick='handleClick(this);' value=""  >Restrict to Springer Nature</label>
@@ -288,45 +290,45 @@
               <br>
               <ol>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013673064603.85" target="_blank">Alex Charles&nbsp;Michalos</a> <a class="badge text-info" title="Tot Publications">14</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000102445.14" target="_blank">Owen Macdonald&nbsp;Mugurungi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015004053411.57" target="_blank">Commonwealth&nbsp;Secretariat</a> <a class="badge text-info" title="Tot Publications">8</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000200133.51" target="_blank">Kenneth Kairu&nbsp;Ngure</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015063565616.50" target="_blank">Matthew&nbsp;Cummins</a> <a class="badge text-info" title="Tot Publications">7</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000435364.42" target="_blank">Carla Das&nbsp;Dores</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.016322166352.47" target="_blank">Isabel&nbsp;Ortiz</a> <a class="badge text-info" title="Tot Publications">7</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010006212557.15" target="_blank">Libo&nbsp;Li</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010201726133.52" target="_blank">Filomena&nbsp;Maggino</a> <a class="badge text-info" title="Tot Publications">5</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000703745.91" target="_blank">Reuben M&nbsp;Granich</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011610554027.92" target="_blank">Mark G&nbsp;Edwards</a> <a class="badge text-info" title="Tot Publications">5</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000734516.10" target="_blank">Collins C&nbsp;Iwuji</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012674551767.03" target="_blank">Aaditya&nbsp;Mattoo</a> <a class="badge text-info" title="Tot Publications">4</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000760647.32" target="_blank">Mosepele&nbsp;Mosepele</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012747057011.20" target="_blank">Dominique Y&nbsp;Van Der Mensbrugghe</a> <a class="badge text-info" title="Tot Publications">4</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001014230.37" target="_blank">Olatunji O&nbsp;Adetokunboh</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.013667012521.86" target="_blank">John J&nbsp;Kirton</a> <a class="badge text-info" title="Tot Publications">4</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001161006.26" target="_blank">Pam&nbsp;Datong</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.014245432037.67" target="_blank">Linne Marie&nbsp;Lauesen</a> <a class="badge text-info" title="Tot Publications">4</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001360360.83" target="_blank">Limbika&nbsp;Maliwichi-Senganimalunje</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015550264677.39" target="_blank">Peter Bille&nbsp;Larsen</a> <a class="badge text-info" title="Tot Publications">4</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01002170541.03" target="_blank">Brittany A&nbsp;Bowman</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0777021654.88" target="_blank">Barry B&nbsp;Hughes</a> <a class="badge text-info" title="Tot Publications">4</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01002464206.15" target="_blank">Duncan A&nbsp;Mackellar</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010127501165.49" target="_blank">Christian&nbsp;Morrisson</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003147350.23" target="_blank">Alison Silvis&nbsp;Rustagi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011254372157.31" target="_blank">Ruut&nbsp;Veenhoven</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003175514.99" target="_blank">Chandrasekaran&nbsp;Padmapriyadarsini</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011373207207.62" target="_blank">Richard J&nbsp;Estes</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003254155.76" target="_blank">Asier&nbsp;Saez-Cirion</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011436522655.82" target="_blank">Paolo&nbsp;Savona</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003416225.89" target="_blank">Timothy Juma&nbsp;Etyang</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01153323751.36" target="_blank">Johannes Paul&nbsp;Jütting</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010035153154.01" target="_blank">Felix&nbsp;Mwanza</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012112750573.40" target="_blank">Úrsula Oswald&nbsp;Spring</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010035456414.37" target="_blank">Daniel&nbsp;Mwai</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012250047431.20" target="_blank">Shuchi&nbsp;Pahuja</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01004116565.51" target="_blank">José Antonio&nbsp;Izazola-Licea</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01227476654.77" target="_blank">Jose Roberto&nbsp;Solórzano</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01004155215.34" target="_blank">Natasha&nbsp;Samsunder</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
               </ol>
             </div>
@@ -337,45 +339,45 @@
               <br>
               <ol>
               
-                <li><a href="https://grid.ac/institutes/grid.1017.7" target="_blank">RMIT University</a> <a class="badge text-info" title="Tot Publications">25</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1002.3" target="_blank">Monash University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.17091.3e" target="_blank">University of British Columbia</a> <a class="badge text-info" title="Tot Publications">15</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10025.36" target="_blank">University of Liverpool</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.266876.b" target="_blank">University of Northern British Columbia</a> <a class="badge text-info" title="Tot Publications">14</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1005.4" target="_blank">UNSW Sydney</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1001.0" target="_blank">Australian National University</a> <a class="badge text-info" title="Tot Publications">11</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1008.9" target="_blank">University of Melbourne</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.431778.e" target="_blank">World Bank</a> <a class="badge text-info" title="Tot Publications">11</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1011.1" target="_blank">James Cook University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.420318.c" target="_blank">United Nations Children&#x27;s Fund</a> <a class="badge text-info" title="Tot Publications">9</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1013.3" target="_blank">The University of Sydney</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1012.2" target="_blank">University of Western Australia</a> <a class="badge text-info" title="Tot Publications">8</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1018.8" target="_blank">La Trobe University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.410682.9" target="_blank">National Research University Higher School of Economics</a> <a class="badge text-info" title="Tot Publications">8</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1020.3" target="_blank">University of New England</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.4991.5" target="_blank">University of Oxford</a> <a class="badge text-info" title="Tot Publications">8</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1032.0" target="_blank">Curtin University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1002.3" target="_blank">Monash University</a> <a class="badge text-info" title="Tot Publications">7</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1056.2" target="_blank">Burnet Institute</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.214458.e" target="_blank">University of Michigan</a> <a class="badge text-info" title="Tot Publications">7</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10595.38" target="_blank">University of Malawi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.5254.6" target="_blank">University of Copenhagen</a> <a class="badge text-info" title="Tot Publications">7</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10604.33" target="_blank">University of Nairobi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.17063.33" target="_blank">University of Toronto</a> <a class="badge text-info" title="Tot Publications">6</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10698.36" target="_blank">University of North Carolina at Chapel Hill</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.4280.e" target="_blank">National University of Singapore</a> <a class="badge text-info" title="Tot Publications">6</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10818.30" target="_blank">University of Rwanda</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.462005.5" target="_blank">Asian Development Bank</a> <a class="badge text-info" title="Tot Publications">6</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10919.30" target="_blank">UiT The Arctic University of Norway</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.7563.7" target="_blank">University of Milano-Bicocca</a> <a class="badge text-info" title="Tot Publications">6</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11100.31" target="_blank">Cayetano Heredia University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.8142.f" target="_blank">Catholic University of the Sacred Heart</a> <a class="badge text-info" title="Tot Publications">6</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11135.37" target="_blank">Peking University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.8195.5" target="_blank">University of Delhi</a> <a class="badge text-info" title="Tot Publications">6</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11194.3c" target="_blank">Makerere University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1013.3" target="_blank">University of Sydney</a> <a class="badge text-info" title="Tot Publications">5</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11505.30" target="_blank">Institute of Tropical Medicine Antwerp</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1021.2" target="_blank">Deakin University</a> <a class="badge text-info" title="Tot Publications">5</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.116068.8" target="_blank">Massachusetts Institute of Technology</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
               </ol>
             </div>
@@ -387,45 +389,7 @@
               
               <ol>
               
-                <li><a href="https://grid.ac/institutes/grid.54432.34" target="_blank">Japan Society for the Promotion of Science</a> <a class="badge text-info" title="Tot Publications">7</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.270680.b" target="_blank">European Commission</a> <a class="badge text-info" title="Tot Publications">5</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.434257.3" target="_blank">Economic and Social Research Council</a> <a class="badge text-info" title="Tot Publications">5</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.418309.7" target="_blank">Bill &amp; Melinda Gates Foundation</a> <a class="badge text-info" title="Tot Publications">4</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.425888.b" target="_blank">Swiss National Science Foundation</a> <a class="badge text-info" title="Tot Publications">4</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.3575.4" target="_blank">World Health Organization</a> <a class="badge text-info" title="Tot Publications">3</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.52788.30" target="_blank">Wellcome Trust</a> <a class="badge text-info" title="Tot Publications">3</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.14105.31" target="_blank">Medical Research Council</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.22919.31" target="_blank">Foundation for Science and Technology</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.419696.5" target="_blank">National Natural Science Foundation of China</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.420488.2" target="_blank">Dutch Research Council</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.434261.6" target="_blank">Research Foundation - Flanders</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.453101.2" target="_blank">Ministry of Education, Science, Research and Sport of the Slovak Republic</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.454869.2" target="_blank">Russian Science Foundation</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.13985.36" target="_blank">The Research Council of Norway</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.25111.36" target="_blank">FWF Austrian Science Fund</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.410727.7" target="_blank">Chinese Academy of Agricultural Sciences</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.413452.5" target="_blank">Australian Research Council</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.415021.3" target="_blank">South African Medical Research Council</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.417763.0" target="_blank">David and Lucile Packard Foundation</a> <a class="badge text-info" title="Tot Publications">1</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.14105.31" target="_blank">Medical Research Council</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
                 </ol>
             </div>
@@ -449,178 +413,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Evidence-based interventions for improvement of maternal and child nutrition: what can be done and at what cost?</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(13)60996-4" target="_blank">10.1016/s0140-6736(13)60996-4</a>&nbsp;<span class="badge" style="background: goldenrod;">1543 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">United Nations Conference on Trade and Development (UNCTAD)</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9780203029770" target="_blank">10.4324/9780203029770</a>&nbsp;<span class="badge" style="background: goldenrod;">942 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Nutrition-sensitive interventions and programmes: how can they help to accelerate progress in improving maternal and child nutrition?</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">The Lancet</span>&nbsp;<a href="http://dx.doi.org/10.1016/s0140-6736(13)60843-0" target="_blank">10.1016/s0140-6736(13)60843-0</a>&nbsp;<span class="badge" style="background: goldenrod;">900 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2012</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2012-en" target="_blank">10.1787/weo-2012-en</a>&nbsp;<span class="badge" style="background: goldenrod;">745 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2008</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2008-en" target="_blank">10.1787/weo-2008-en</a>&nbsp;<span class="badge" style="background: goldenrod;">612 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2010</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2010-en" target="_blank">10.1787/weo-2010-en</a>&nbsp;<span class="badge" style="background: goldenrod;">601 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2013</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2013-en" target="_blank">10.1787/weo-2013-en</a>&nbsp;<span class="badge" style="background: goldenrod;">591 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2016</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2016-en" target="_blank">10.1787/weo-2016-en</a>&nbsp;<span class="badge" style="background: goldenrod;">569 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Human Development Report 2009</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/9d335cec-en" target="_blank">10.18356/9d335cec-en</a>&nbsp;<span class="badge" style="background: goldenrod;">535 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2011</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2011-en" target="_blank">10.1787/weo-2011-en</a>&nbsp;<span class="badge" style="background: goldenrod;">482 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Human Development Report 2013</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/a1b0c169-en" target="_blank">10.18356/a1b0c169-en</a>&nbsp;<span class="badge" style="background: goldenrod;">450 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Human development report 2014</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/34bf7a52-en" target="_blank">10.18356/34bf7a52-en</a>&nbsp;<span class="badge" style="background: goldenrod;">441 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Human Development Report 2006</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/334c604b-en" target="_blank">10.18356/334c604b-en</a>&nbsp;<span class="badge" style="background: goldenrod;">430 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">The State of World Fisheries and Aquaculture 2016</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/8e4e0ebf-en" target="_blank">10.18356/8e4e0ebf-en</a>&nbsp;<span class="badge" style="background: goldenrod;">421 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Human Development Report 2003</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/453b7968-en" target="_blank">10.18356/453b7968-en</a>&nbsp;<span class="badge" style="background: goldenrod;">416 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">World Energy Outlook 2006</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/weo-2006-en" target="_blank">10.1787/weo-2006-en</a>&nbsp;<span class="badge" style="background: goldenrod;">411 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Human Development Report 2011</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/fdcff8d6-en" target="_blank">10.18356/fdcff8d6-en</a>&nbsp;<span class="badge" style="background: goldenrod;">406 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">State of World Population 2015</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/b793d926-en" target="_blank">10.18356/b793d926-en</a>&nbsp;<span class="badge" style="background: goldenrod;">400 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Sustainable development and the water–energy–food nexus: A perspective on livelihoods</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Environmental Science &amp; Policy</span>&nbsp;<a href="http://dx.doi.org/10.1016/j.envsci.2015.08.002" target="_blank">10.1016/j.envsci.2015.08.002</a>&nbsp;<span class="badge" style="background: goldenrod;">400 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">World Trade Report 2008</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.30875/e89f8212-en" target="_blank">10.30875/e89f8212-en</a>&nbsp;<span class="badge" style="background: goldenrod;">395 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Oral abstracts of the 21st International AIDS Conference 18–22 July 2016, Durban, South Africa</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Journal of the International AIDS Society</span>&nbsp;<a href="http://dx.doi.org/10.7448/ias.19.6.21264" target="_blank">10.7448/ias.19.6.21264</a>&nbsp;<span class="badge" style="background: goldenrod;">16 citations</span>
                   
                   </li>
 
@@ -711,8 +504,6 @@ function handleClick(cb) {
 
                 // replace spaces with dashes
                 cname = geography.properties.name.replace(/\s+/g, '-').toLowerCase();
-
-                // window.location.href="?s=Food Commodity Markets&country=" + geography.properties.name;
 
                 window.location.href="/food-commodity-markets/" + cname + "/";
 

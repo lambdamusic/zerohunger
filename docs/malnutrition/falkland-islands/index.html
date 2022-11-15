@@ -7,14 +7,14 @@
 <html lang="en">
   <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2000254-3"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4B4FDV3TR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-2000254-3');
+  gtag('config', 'G-T4B4FDV3TR');
 </script>
 
     <script>
@@ -31,9 +31,11 @@
         }];
     </script>
     
-
     <script src="../../media/static/libs/d3-3.5.3/d3.min.js"></script>
     <script src="../../media/static/libs/topojson/topojson.min.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -202,7 +204,7 @@
     &nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>
   </div>
   <div id="q" style="display: none;">
-    <pre><code><p><br>    search publications in full_data for &quot;(Malnutrition AND SDG) OR (Malnutrition AND MDG) AND Falkland Islands &quot;<br>    where (year in [2000:2018]) <br>    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[all]<br>    return in &quot;facets&quot; researchers[all]   <br>    </p></code></pre>
+    <pre><code><p><br>    search publications in title_abstract_only for &quot;(Malnutrition AND SDG) OR (Malnutrition AND MDG) AND Falkland Islands &quot;<br>    where (year in [2000:2018]) <br>    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited limit 20<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[id+name] limit 20<br>    return in &quot;facets&quot; researchers[id+first_name+last_name]  limit 20<br>    </p></code></pre>
   </div>
 
 
@@ -254,7 +256,7 @@
 
         <div class="col-md-12" style="margin-top: 20px;">
           <h3>Showing content for: <span style="color: darkred;">Malnutrition</span>+&nbsp;<span style="color: goldenrod;">Falkland Islands</span>
-              (227 results)
+              (0 results)
           </h3>        
               <span class="checkbox" >
               <label><input type="checkbox" onclick='handleClick(this);' value=""  >Restrict to Springer Nature</label>
@@ -288,46 +290,6 @@
               <br>
               <ol>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0777021654.88" target="_blank">Barry B&nbsp;Hughes</a> <a class="badge text-info" title="Tot Publications">4</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01227476654.77" target="_blank">Jose Roberto&nbsp;Solórzano</a> <a class="badge text-info" title="Tot Publications">3</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015547057007.22" target="_blank">Dale S&nbsp;Rothman</a> <a class="badge text-info" title="Tot Publications">3</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.011736507270.18" target="_blank">Nations World Food&nbsp;Programme</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012361470135.96" target="_blank">André&nbsp;Heck</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015004053411.57" target="_blank">Commonwealth&nbsp;Secretariat</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.016120542417.81" target="_blank">Jonathan D&nbsp;Moyer</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.016616614125.24" target="_blank">Mohammod T&nbsp;Irfan</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010011476260.13" target="_blank">Arthur&nbsp;Gueneau</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01006762126.88" target="_blank">Patrick Lott&nbsp;Kinney</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01011343227.62" target="_blank">Daniel&nbsp;Mason-D&#x27;Croz</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010272001160.44" target="_blank">Thomas E&nbsp;Mckone</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010351520351.08" target="_blank">Paul John&nbsp;Cloke</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01041132724.55" target="_blank">Kirk R&nbsp;Smith</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01044427770.36" target="_blank">Mycle&nbsp;Schneider</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010457777611.73" target="_blank">Andreas&nbsp;Freytag</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010525746575.04" target="_blank">Luiz Alberto&nbsp;Moniz Bandeira</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010572537054.83" target="_blank">Adam Richard&nbsp;Tanielian</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010670705552.50" target="_blank">Roberta&nbsp;Pierfederici</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010735500713.68" target="_blank">Barbara Ann J&nbsp;Rieffer-Flanagan</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
               </ol>
             </div>
 
@@ -336,24 +298,6 @@
               <b>Top Institutions</b>
               <br>
               <ol>
-              
-                <li><a href="https://grid.ac/institutes/grid.440483.f" target="_blank">Observatory of Strasbourg</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.1003.2" target="_blank">University of Queensland</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.1005.4" target="_blank">UNSW Sydney</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.16989.3f" target="_blank">Fondazione Eni Enrico Mattei</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.423878.2" target="_blank">Euro-Mediterranean Center for Climate Change</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.5924.a" target="_blank">University of Navarra</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.7240.1" target="_blank">Ca&#x27; Foscari University of Venice</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.8532.c" target="_blank">Federal University of Rio Grande do Sul</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.9983.b" target="_blank">University of Lisbon</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
               </ol>
             </div>
@@ -364,8 +308,6 @@
               <br>
               
               <ol>
-              
-                <li><a href="https://grid.ac/institutes/grid.25111.36" target="_blank">FWF Austrian Science Fund</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
                 </ol>
             </div>
@@ -384,186 +326,6 @@
               <hr>
 
               
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">State of World Population 2007</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/fe74b223-en" target="_blank">10.18356/fe74b223-en</a>&nbsp;<span class="badge" style="background: goldenrod;">306 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">State of the World&#x27;s Cities 2012/2013</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9780203756171" target="_blank">10.4324/9780203756171</a>&nbsp;<span class="badge" style="background: goldenrod;">272 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">State of World Population 2010</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/7d4bbbc8-en" target="_blank">10.18356/7d4bbbc8-en</a>&nbsp;<span class="badge" style="background: goldenrod;">197 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Economics of Land Degradation and Improvement – A Global Assessment for Sustainable Development</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-319-19168-3" target="_blank">10.1007/978-3-319-19168-3</a>&nbsp;<span class="badge" style="background: goldenrod;">168 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Coping with Water Scarcity, Addressing the Challenges</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-1-4020-9579-5" target="_blank">10.1007/978-1-4020-9579-5</a>&nbsp;<span class="badge" style="background: goldenrod;">159 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Biodiversity Hotspots, Distribution and Protection of Conservation Priority Areas</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-642-20992-5" target="_blank">10.1007/978-3-642-20992-5</a>&nbsp;<span class="badge" style="background: goldenrod;">154 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Encyclopedia of Sustainability Science and Technology</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-1-4419-0851-3" target="_blank">10.1007/978-1-4419-0851-3</a>&nbsp;<span class="badge" style="background: goldenrod;">153 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Development Co-operation Report 2010</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/dcr-2010-en" target="_blank">10.1787/dcr-2010-en</a>&nbsp;<span class="badge" style="background: goldenrod;">140 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Successful Adaptation to Climate Change</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9780203593882" target="_blank">10.4324/9780203593882</a>&nbsp;<span class="badge" style="background: goldenrod;">121 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Land Reform in Developing Countries</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9780203876251" target="_blank">10.4324/9780203876251</a>&nbsp;<span class="badge" style="background: goldenrod;">121 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">World Cities Report 2016</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/d201a997-en" target="_blank">10.18356/d201a997-en</a>&nbsp;<span class="badge" style="background: goldenrod;">113 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    PREPRINT&nbsp;<span class="lead" style="color: darkgoldenrod;">The International Model for Policy Analysis of Agricultural Commodities and Trade (IMPACT): Model Description for Version 3</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">SSRN Electronic Journal</span>&nbsp;<a href="http://dx.doi.org/10.2139/ssrn.2741234" target="_blank">10.2139/ssrn.2741234</a>&nbsp;<span class="badge" style="background: goldenrod;">104 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">The State of Food and Agriculture 2010-2011</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/ca0215ed-en" target="_blank">10.18356/ca0215ed-en</a>&nbsp;<span class="badge" style="background: goldenrod;">85 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Encyclopedia of Corporate Social Responsibility</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-642-28036-8" target="_blank">10.1007/978-3-642-28036-8</a>&nbsp;<span class="badge" style="background: goldenrod;">68 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">International Social Work: Issues, Strategies, and Programs</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4135/9781544308685" target="_blank">10.4135/9781544308685</a>&nbsp;<span class="badge" style="background: goldenrod;">66 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">State of World Population 2009</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/d5a97f23-en" target="_blank">10.18356/d5a97f23-en</a>&nbsp;<span class="badge" style="background: goldenrod;">65 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Security Studies</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9780203926604" target="_blank">10.4324/9780203926604</a>&nbsp;<span class="badge" style="background: goldenrod;">58 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Islands at Risk?</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4337/9781781003510" target="_blank">10.4337/9781781003510</a>&nbsp;<span class="badge" style="background: goldenrod;">57 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">The World’s Water, The Biennial Report on Freshwater Resources</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.5822/978-1-61091-483-3" target="_blank">10.5822/978-1-61091-483-3</a>&nbsp;<span class="badge" style="background: goldenrod;">55 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Globalization and Environmental Challenges, Reconceptualizing Security in the 21st Century</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-540-75977-5" target="_blank">10.1007/978-3-540-75977-5</a>&nbsp;<span class="badge" style="background: goldenrod;">54 citations</span>
-                  
-                  </li>
-
               
                 
         </div>
@@ -651,8 +413,6 @@ function handleClick(cb) {
 
                 // replace spaces with dashes
                 cname = geography.properties.name.replace(/\s+/g, '-').toLowerCase();
-
-                // window.location.href="?s=Malnutrition&country=" + geography.properties.name;
 
                 window.location.href="/malnutrition/" + cname + "/";
 

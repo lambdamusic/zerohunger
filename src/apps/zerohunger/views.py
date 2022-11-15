@@ -68,13 +68,13 @@ TOPICS = [
 
 #
 QUERY = """
-    search publications in full_data for "(%s AND SDG) OR (%s AND MDG)%s"
+    search publications in title_abstract_only for "(%s AND SDG) OR (%s AND MDG)%s"
     where (year in [2000:2018]%s) 
-    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited
+    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited limit 20
     return in "facets"
     funders[name + country_name] as "entity_funder" 
-    return in "facets" research_orgs[id+name]
-    return in "facets" researchers[id+first_name+last_name]   
+    return in "facets" research_orgs[id+name] limit 20
+    return in "facets" researchers[id+first_name+last_name]  limit 20
     """
 
 COUNTRY_CLAUSE = " AND %s "

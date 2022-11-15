@@ -7,14 +7,14 @@
 <html lang="en">
   <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2000254-3"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4B4FDV3TR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-2000254-3');
+  gtag('config', 'G-T4B4FDV3TR');
 </script>
 
     <script>
@@ -31,9 +31,11 @@
         }];
     </script>
     
-
     <script src="../../media/static/libs/d3-3.5.3/d3.min.js"></script>
     <script src="../../media/static/libs/topojson/topojson.min.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -202,7 +204,7 @@
     &nbsp;<small>(<a href="javascript:$('#q').toggle();">view query</a>)</small>
   </div>
   <div id="q" style="display: none;">
-    <pre><code><p><br>    search publications in full_data for &quot;(Genetic Diversity AND SDG) OR (Genetic Diversity AND MDG) AND French Guiana &quot;<br>    where (year in [2000:2018]) <br>    return publications [basics-issue-volume-pages+doi+times_cited] sort by times_cited<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[all]<br>    return in &quot;facets&quot; researchers[all]   <br>    </p></code></pre>
+    <pre><code><p><br>    search publications in title_abstract_only for &quot;(Genetic Diversity AND SDG) OR (Genetic Diversity AND MDG) AND French Guiana &quot;<br>    where (year in [2000:2018]) <br>    return publications [title+doi+journal+type+issue+volume+pages+doi+times_cited] sort by times_cited limit 20<br>    return in &quot;facets&quot;<br>    funders[name + country_name] as &quot;entity_funder&quot; <br>    return in &quot;facets&quot; research_orgs[id+name] limit 20<br>    return in &quot;facets&quot; researchers[id+first_name+last_name]  limit 20<br>    </p></code></pre>
   </div>
 
 
@@ -254,7 +256,7 @@
 
         <div class="col-md-12" style="margin-top: 20px;">
           <h3>Showing content for: <span style="color: darkred;">Genetic Diversity</span>+&nbsp;<span style="color: goldenrod;">French Guiana</span>
-              (469 results)
+              (1 results)
           </h3>        
               <span class="checkbox" >
               <label><input type="checkbox" onclick='handleClick(this);' value=""  >Restrict to Springer Nature</label>
@@ -288,45 +290,45 @@
               <br>
               <ol>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001467371.06" target="_blank">Nalin&nbsp;Rastogi</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000102445.14" target="_blank">Owen Macdonald&nbsp;Mugurungi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01231261023.21" target="_blank">Igor V&nbsp;Mokrousov</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000200133.51" target="_blank">Kenneth Kairu&nbsp;Ngure</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0106442510.63" target="_blank">Odile&nbsp;Mercereau-Puijalon</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000435364.42" target="_blank">Carla Das&nbsp;Dores</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01106646221.02" target="_blank">Eric&nbsp;Legrand</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010006212557.15" target="_blank">Libo&nbsp;Li</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01227476654.77" target="_blank">Jose Roberto&nbsp;Solórzano</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000703745.91" target="_blank">Reuben M&nbsp;Granich</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.012361470135.96" target="_blank">André&nbsp;Heck</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000734516.10" target="_blank">Collins C&nbsp;Iwuji</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01307226607.26" target="_blank">Voahangy&nbsp;Rasolofo-Razanamparany</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01000760647.32" target="_blank">Mosepele&nbsp;Mosepele</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01332405673.98" target="_blank">Jean-Marc&nbsp;Reynes</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001014230.37" target="_blank">Olatunji O&nbsp;Adetokunboh</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01344223333.35" target="_blank">Barry Neal&nbsp;Kreiswirth</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001161006.26" target="_blank">Pam&nbsp;Datong</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01351053170.95" target="_blank">Ho Minh&nbsp;Ly</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01001360360.83" target="_blank">Limbika&nbsp;Maliwichi-Senganimalunje</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.015547057007.22" target="_blank">Dale S&nbsp;Rothman</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01002170541.03" target="_blank">Brittany A&nbsp;Bowman</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0632707472.64" target="_blank">Maria Lucia Rosa&nbsp;Rossetti</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01002464206.15" target="_blank">Duncan A&nbsp;Mackellar</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0647273032.19" target="_blank">Dick&nbsp;Van Soolingen</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003147350.23" target="_blank">Alison Silvis&nbsp;Rustagi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0656234657.21" target="_blank">Karine&nbsp;Brudey</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003175514.99" target="_blank">Chandrasekaran&nbsp;Padmapriyadarsini</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0661120075.68" target="_blank">Angel Adrián&nbsp;Cataldi</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003254155.76" target="_blank">Asier&nbsp;Saez-Cirion</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0664060070.06" target="_blank">Séverine&nbsp;Ferdinand</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01003416225.89" target="_blank">Timothy Juma&nbsp;Etyang</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0670216523.70" target="_blank">Olga V&nbsp;Narvskaya</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010035153154.01" target="_blank">Felix&nbsp;Mwanza</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0713171721.02" target="_blank">Philip Noel&nbsp;Suffys</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.010035456414.37" target="_blank">Daniel&nbsp;Mwai</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0755351436.01" target="_blank">Didier&nbsp;Menard</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01004116565.51" target="_blank">José Antonio&nbsp;Izazola-Licea</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0774766127.77" target="_blank">Christophe&nbsp;Sola</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.01004155215.34" target="_blank">Natasha&nbsp;Samsunder</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
               </ol>
             </div>
@@ -337,45 +339,45 @@
               <br>
               <ol>
               
-                <li><a href="https://grid.ac/institutes/grid.428999.7" target="_blank">Pasteur Institute</a> <a class="badge text-info" title="Tot Publications">6</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1002.3" target="_blank">Monash University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.11899.38" target="_blank">University of São Paulo</a> <a class="badge text-info" title="Tot Publications">5</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10025.36" target="_blank">University of Liverpool</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.418068.3" target="_blank">Oswaldo Cruz Foundation</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1005.4" target="_blank">UNSW Sydney</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.418511.8" target="_blank">Institut Pasteur de Madagascar</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1008.9" target="_blank">University of Melbourne</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.418525.f" target="_blank">Institut Pasteur de la Guyane</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1011.1" target="_blank">James Cook University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.418537.c" target="_blank">Institut Pasteur du Cambodge</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1013.3" target="_blank">The University of Sydney</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.419231.c" target="_blank">National Agricultural Technology Institute</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1018.8" target="_blank">La Trobe University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.452920.8" target="_blank">Institut Pasteur de la Guadeloupe</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1020.3" target="_blank">University of New England</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.5342.0" target="_blank">Ghent University</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1032.0" target="_blank">Curtin University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.9486.3" target="_blank">National Autonomous University of Mexico</a> <a class="badge text-info" title="Tot Publications">3</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.1056.2" target="_blank">Burnet Institute</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.419591.1" target="_blank">Saint Petersburg Pasteur Institute</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10595.38" target="_blank">University of Malawi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.425219.9" target="_blank">Bioversity International</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10604.33" target="_blank">University of Nairobi</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.430387.b" target="_blank">Rutgers, The State University of New Jersey</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10698.36" target="_blank">University of North Carolina at Chapel Hill</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.4399.7" target="_blank">Institute of Research for Development</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10818.30" target="_blank">University of Rwanda</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.440483.f" target="_blank">Observatory of Strasbourg</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.10919.30" target="_blank">UiT The Arctic University of Norway</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.508487.6" target="_blank">University of Paris</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11100.31" target="_blank">Cayetano Heredia University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.7247.6" target="_blank">University of Los Andes</a> <a class="badge text-info" title="Tot Publications">2</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11135.37" target="_blank">Peking University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.10347.31" target="_blank">University of Malaya</a> <a class="badge text-info" title="Tot Publications">1</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11194.3c" target="_blank">Makerere University</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.1048.d" target="_blank">University of Southern Queensland</a> <a class="badge text-info" title="Tot Publications">1</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.11505.30" target="_blank">Institute of Tropical Medicine Antwerp</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
-                <li><a href="https://grid.ac/institutes/grid.10772.33" target="_blank">Universidade Nova de Lisboa</a> <a class="badge text-info" title="Tot Publications">1</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.116068.8" target="_blank">Massachusetts Institute of Technology</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
               </ol>
             </div>
@@ -387,45 +389,7 @@
               
               <ol>
               
-                <li><a href="https://grid.ac/institutes/grid.22058.3d" target="_blank">National Agency for Research</a> <a class="badge text-info" title="Tot Publications">3</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.270680.b" target="_blank">European Commission</a> <a class="badge text-info" title="Tot Publications">3</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.239119.1" target="_blank">United States Department of Commerce</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.419681.3" target="_blank">National Institute of Allergy and Infectious Diseases</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.425888.b" target="_blank">Swiss National Science Foundation</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.450640.3" target="_blank">National Council for Scientific and Technological Development</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.452907.d" target="_blank">São Paulo Research Foundation</a> <a class="badge text-info" title="Tot Publications">2</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.25111.36" target="_blank">FWF Austrian Science Fund</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.3532.7" target="_blank">National Oceanic and Atmospheric Administration</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.418094.0" target="_blank">National Academy of Sciences of Armenia</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.418199.c" target="_blank">Ministère des Solidarités et de la Santé</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.418270.8" target="_blank">National Council of Science and Technology</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.418275.d" target="_blank">National Polytechnic Institute</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.423606.5" target="_blank">National Scientific and Technical Research Council</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.424150.6" target="_blank">German Research Foundation</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.429651.d" target="_blank">National Center for Advancing Translational Sciences</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.452295.d" target="_blank">Coordenação de Aperfeicoamento de Pessoal de Nível Superior</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.452899.b" target="_blank">Russian Foundation for Basic Research</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.452986.4" target="_blank">Fondation pour la Recherche Médicale</a> <a class="badge text-info" title="Tot Publications">1</a></li>
-              
-                <li><a href="https://grid.ac/institutes/grid.452990.3" target="_blank">Alexander von Humboldt Foundation</a> <a class="badge text-info" title="Tot Publications">1</a></li>
+                <li><a href="https://app.dimensions.ai/discover/publication?and_facet_research_org=grid.14105.31" target="_blank">Medical Research Council</a> <a class="badge text-info" title="Tot Publications">1</a></li>
               
                 </ol>
             </div>
@@ -449,178 +413,7 @@
                   <li style="margin-bottom: 10px;">
                     
                     
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Mycobacterium tuberculosis complex genetic diversity: mining the fourth international spoligotyping database (SpolDB4) for classification, population genetics and epidemiology</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">BMC Microbiology</span>&nbsp;<a href="http://dx.doi.org/10.1186/1471-2180-6-23" target="_blank">10.1186/1471-2180-6-23</a>&nbsp;<span class="badge" style="background: goldenrod;">860 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Sterile Insect Technique, Principles and Practice in Area-Wide Integrated Pest Management</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/1-4020-4051-2" target="_blank">10.1007/1-4020-4051-2</a>&nbsp;<span class="badge" style="background: goldenrod;">375 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">The State of the World&#x27;s Land and Water Resources for Food and Agriculture</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.4324/9780203142837" target="_blank">10.4324/9780203142837</a>&nbsp;<span class="badge" style="background: goldenrod;">368 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">The Oil Palm</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1002/9780470750971" target="_blank">10.1002/9780470750971</a>&nbsp;<span class="badge" style="background: goldenrod;">348 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Human Development Report 2004</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/68b83600-en" target="_blank">10.18356/68b83600-en</a>&nbsp;<span class="badge" style="background: goldenrod;">308 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">A Handbook of the World&#x27;s Conifers (2 vols.)</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1163/9789047430629" target="_blank">10.1163/9789047430629</a>&nbsp;<span class="badge" style="background: goldenrod;">302 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Energy Technology Perspectives 2008</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1787/9789264041431-en" target="_blank">10.1787/9789264041431-en</a>&nbsp;<span class="badge" style="background: goldenrod;">249 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Snapshot of Moving and Expanding Clones of Mycobacterium tuberculosis and Their Global Distribution Assessed by Spoligotyping in an International Study†</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Journal of Clinical Microbiology</span>&nbsp;<a href="http://dx.doi.org/10.1128/jcm.41.5.1963-1970.2003" target="_blank">10.1128/jcm.41.5.1963-1970.2003</a>&nbsp;<span class="badge" style="background: goldenrod;">214 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Trace Elements in Soils</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1002/9781444319477" target="_blank">10.1002/9781444319477</a>&nbsp;<span class="badge" style="background: goldenrod;">189 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Economics of Land Degradation and Improvement – A Global Assessment for Sustainable Development</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-319-19168-3" target="_blank">10.1007/978-3-319-19168-3</a>&nbsp;<span class="badge" style="background: goldenrod;">168 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Biodiversity Hotspots, Distribution and Protection of Conservation Priority Areas</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-642-20992-5" target="_blank">10.1007/978-3-642-20992-5</a>&nbsp;<span class="badge" style="background: goldenrod;">154 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">The State of the World&#x27;s Children 2012</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.18356/ff6fb82e-en" target="_blank">10.18356/ff6fb82e-en</a>&nbsp;<span class="badge" style="background: goldenrod;">131 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Challenges for malaria elimination in Brazil</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Malaria Journal</span>&nbsp;<a href="http://dx.doi.org/10.1186/s12936-016-1335-1" target="_blank">10.1186/s12936-016-1335-1</a>&nbsp;<span class="badge" style="background: goldenrod;">115 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    PREPRINT&nbsp;<span class="lead" style="color: darkgoldenrod;">The International Model for Policy Analysis of Agricultural Commodities and Trade (IMPACT): Model Description for Version 3</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">SSRN Electronic Journal</span>&nbsp;<a href="http://dx.doi.org/10.2139/ssrn.2741234" target="_blank">10.2139/ssrn.2741234</a>&nbsp;<span class="badge" style="background: goldenrod;">104 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Ecology and Conservation of Mountaintop grasslands in Brazil</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-3-319-29808-5" target="_blank">10.1007/978-3-319-29808-5</a>&nbsp;<span class="badge" style="background: goldenrod;">101 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    MONOGRAPH&nbsp;<span class="lead" style="color: darkgoldenrod;">Edible Medicinal And Non Medicinal Plants, Volume 3, Fruits</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-94-007-2534-8" target="_blank">10.1007/978-94-007-2534-8</a>&nbsp;<span class="badge" style="background: goldenrod;">101 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Morphological and molecular evidence for phylogeny and classification of South American pitvipers, genera Bothrops, Bothriopsis, and Bothrocophias (Serpentes: Viperidae)</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Zoological Journal of the Linnean Society</span>&nbsp;<a href="http://dx.doi.org/10.1111/j.1096-3642.2008.00495.x" target="_blank">10.1111/j.1096-3642.2008.00495.x</a>&nbsp;<span class="badge" style="background: goldenrod;">99 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    BOOK&nbsp;<span class="lead" style="color: darkgoldenrod;">Agroforestry - The Future of Global Land Use</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;"></span>&nbsp;<a href="http://dx.doi.org/10.1007/978-94-007-4676-3" target="_blank">10.1007/978-94-007-4676-3</a>&nbsp;<span class="badge" style="background: goldenrod;">92 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Amblyomma cajennense (Fabricius, 1787) (Acari: Ixodidae), the Cayenne tick: phylogeography and evidence for allopatric speciation</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">BMC Evolutionary Biology</span>&nbsp;<a href="http://dx.doi.org/10.1186/1471-2148-13-267" target="_blank">10.1186/1471-2148-13-267</a>&nbsp;<span class="badge" style="background: goldenrod;">85 citations</span>
-                  
-                  </li>
-
-              
-
-                  <li style="margin-bottom: 10px;">
-                    
-                    
-                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">High Levels of Diversity Uncovered in a Widespread Nominal Taxon: Continental Phylogeography of the Neotropical Tree Frog Dendropsophus minutus</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">PLOS ONE</span>&nbsp;<a href="http://dx.doi.org/10.1371/journal.pone.0103958" target="_blank">10.1371/journal.pone.0103958</a>&nbsp;<span class="badge" style="background: goldenrod;">83 citations</span>
+                    ARTICLE&nbsp;<span class="lead" style="color: darkgoldenrod;">Oral abstracts of the 21st International AIDS Conference 18–22 July 2016, Durban, South Africa</span><br />&nbsp;<span style="text-transform: uppercase; color: grey;">Journal of the International AIDS Society</span>&nbsp;<a href="http://dx.doi.org/10.7448/ias.19.6.21264" target="_blank">10.7448/ias.19.6.21264</a>&nbsp;<span class="badge" style="background: goldenrod;">16 citations</span>
                   
                   </li>
 
@@ -711,8 +504,6 @@ function handleClick(cb) {
 
                 // replace spaces with dashes
                 cname = geography.properties.name.replace(/\s+/g, '-').toLowerCase();
-
-                // window.location.href="?s=Genetic Diversity&country=" + geography.properties.name;
 
                 window.location.href="/genetic-diversity/" + cname + "/";
 
